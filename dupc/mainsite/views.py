@@ -13,13 +13,8 @@ def homepage(request):
 
 
 
-def teams(request):
-<<<<<<< HEAD
-    return render(request,'index.html')
-=======
-    
+def teams(request):    
     return render(request,'teams.html')
->>>>>>> d4890365e9e96854c5bc4263de92916ec4a16648
 
 def loginpage(request):
     if request.method == 'POST':
