@@ -9,15 +9,13 @@ from django.contrib.auth import login, authenticate, logout
 
 
 def homepage(request):
-<<<<<<< HEAD
-    return render(request,'base.html')
+    return render(request,'index.html')
 
 
 
 def teams(request):
-    return render(request,'base.html')
-=======
-    return render(request,'index.html')
+    
+    return render(request,'teams.html')
 
 def loginpage(request):
     if request.method == 'POST':
@@ -42,4 +40,3 @@ def loginpage(request):
 def Logout(request):
     logout(request)
     return redirect('homepage')
->>>>>>> 5523bb73da3963818eaffeed754f5219dfe1b8e1
