@@ -2,6 +2,7 @@
 <html lang="en">
 {%load static %}
   <head>
+    
     <title>Water Diplomacy</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -52,8 +53,9 @@
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block" style="font-family:'Times New Roman', Times, serif;font-size: 170%;">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
+                
+                <li class="active"><a class="link" href="{% url 'mainsite:homepage' %}">Home</a></li>
+                <li><a class="link" href="#">About</a></li>
                 <li><a href="{% url 'mainsite:teams' %}">Teams</a></li>
                 <li><a href="#">Outreach</a></li>
                 <li><a href="#">Resources</a></li>
@@ -141,8 +143,6 @@
   <script src="{% static "/js/aos.js" %}"></script>
 
   <script src="{% static "/js/main.js"%}"></script>
-
-  <script src="static/js/main.js"></script>
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   
     
