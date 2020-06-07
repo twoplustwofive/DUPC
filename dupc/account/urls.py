@@ -8,6 +8,6 @@ app_name = "account"
 
 urlpatterns = [
     path('',views.loginpage,name='loginpage'),
-    path('logout',views.Logout,name='logoutpage'),
+    path('logout/',views.Logout,name='logoutpage'),
 ]+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

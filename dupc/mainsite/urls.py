@@ -5,6 +5,6 @@ from django.urls import path
 app_name = 'mainsite'
 urlpatterns = [
     path('',views.homepage,name='homepage'),
-    path('teams',views.teams,name ='teams'),
-    path('account',include('account.urls',namespace='account')),
+    path('teams/',views.teams,name ='teams'),
+    path('account/',include('account.urls',namespace='account')),
 ]
