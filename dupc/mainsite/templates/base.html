@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="static/css/bootstrap-datepicker.css">
 
-    <link rel="stylesheet" href="static/fonts/flaticon/font/flaticon.css">
+    <link rel="stylesheet" href="static/fonts/icomoon/font/icomoon.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
@@ -42,31 +42,30 @@
     
     <header class="site-navbar py-1 bg-light" role="banner" >
 
-      <div class="container">
+      <div class="container" >
       <brb>
         <div class="row align-items-center">
           
            <div class="">
-            <h1 class="mb-0"><a href="#" class="text-black h2 mb-0">Science communication for water diplomacy in the Brahmaputra</a></h1>
+            <h1 class="mb-0"><a class="text-black h2 mb-0" style="font-family:'Times New Roman', Times, serif;font-size: 110%;">Science communication for water diplomacy in the Brahmaputra</a></h1>
           </div>
-          <div class="col-10 col-md-7 d-none d-xl-block">
+          <div class="col-80 col-md-0 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
 
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block" style="font-family:'Times New Roman', Times, serif;font-size: 170%;">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="{% url 'teams' %}">Teams</a></li>
+                <li><a href="{% url 'mainsite:teams' %}">Teams</a></li>
                 <li><a href="#">Outreach</a></li>
                 <li><a href="#">Resources</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Contact</a></li>
-                <li><a href={% url 'loginpage' %}>Login</a></li>
-                <!-- <li><a href="booking.html">Book Online</a></li> -->
+                <li><a href="{% url 'account:loginpage' %}">Login</a></li>
               </ul>
             </nav>
           </div>
 
-          <div class="col-6 col-xl-2 text-right">
+          <div class="col-10 col-xl-2 text-right">
             <div class="d-none d-xl-inline-block">
               <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
                 

@@ -1,0 +1,22 @@
+
+
+  
+
+{% extends 'base.html' %}
+
+{% block ccd %}
+    
+<div class="container">
+    {% if user.is_authenticated %}
+    <h3>Welcome, {{user.username}}!</h3>
+    <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info"><a href={% url 'account:logoutpage' %}>Logout</a></button>
+    {% else %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+    </form>
+    {% endif %}
+</div>
+   
+{% endblock ccd %}
