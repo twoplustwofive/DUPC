@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+ {% block ccd %}
+    <br>
+ <h3 align = 'center'>Add Team Members!</h3>
+    {% if error_message %}
+      <p><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <form action = "#", method = 'POST' enctype = "multipart/form-data">
+     {% csrf_token %}
+  <div class="form-group">
+        <div class="col-3">
+            Name:
+            <input type="text" class="form-control" name ="name" aria-describedby="text" placeholder="Enter your Name">
+        </div>
+  </div>
+  <div class="form-group">
+        <div class="col-3">
+        Email address:
+    <input type="email" class="form-control" name ="email" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+  </div>
+
+    <div class="form-group">
+        <div class="col-3">
+            Ph.No:
+            <input type="text" class="form-control" name = "phone"aria-describedby="text" placeholder="Enter your phone number">
+        </div>
+  </div>
+
+   <div class="form-group">
+    <div class="col-3">
+    Details:
+    <textarea class="form-control" name = "body" rows="4" placeholder ="Enter Details"></textarea>
+    </div>
+  </div>
+
+    <div class="form-group">
+        <div class="col-3">
+      Upload Image/Logo:
+    <input type = "file" class = "form-control-file" name ="img">
+    </div>
+  </div>
+  <div align  = "center" >
+  <button type="submit" class="btn btn-primary">Add Team Member</button>
+  </div>
+  </form>
+
+ 
+ <br>
+{% endblock %}

@@ -62,6 +62,9 @@
                 <li><a href="#">News</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="{% url 'account:loginpage' %}">Login</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'mainsite:add'%}">Add Team</a></li>
+                {% endif%}
               </ul>
             </nav>
           </div>
