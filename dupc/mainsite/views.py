@@ -25,13 +25,13 @@ def add(request):
     if request.method == 'POST':
         
         
-        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body'] and request.FILES['img',False]:
+        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body'] and request.FILES['img']:
             tm = team()
             tm.name = request.POST['name']
             tm.email_id = request.POST['email']  
             tm.phone = request.POST['phone']
             tm.information = request.POST['body']
-            tm.image = request.FILES['img',False]
+            tm.image = request.FILES['img']
             tm.save()
             return redirect('mainsite:teams')
         else:
