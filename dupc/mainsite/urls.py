@@ -6,5 +6,9 @@ app_name = 'mainsite'
 urlpatterns = [
     path('',views.homepage,name='homepage'),
     path('teams/',views.teams,name ='teams'),
+    path('add/',views.add,name = 'add'),
     path('account/',include('account.urls',namespace='account')),
+    path('aim/',views.aim,name = 'aim'),
+    path('background/',views.background, name = 'background'),
+    path('activities/',views.activity,name = 'activity'),
 ]

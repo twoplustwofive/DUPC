@@ -6,7 +6,7 @@ class team(models.Model):
     name = models.CharField(max_length = 30)
     email_id = models.CharField(max_length = 30)
     phone = models.IntegerField()
-    image = models.ImageField(upload_to = 'images/')
+    image = models.ImageField(upload_to = 'images/', default = 'download.png')
     information = models.TextField(max_length = 300)
     
     def __str__(self):

@@ -55,13 +55,27 @@
               <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block" style="font-family:'Times New Roman', Times, serif;font-size: 170%;">
                 
                 <li class="active"><a class="link" href="{% url 'mainsite:homepage' %}">Home</a></li>
-                <li><a class="link" href="#">About</a></li>
-                <li><a href="{% url 'mainsite:teams' %}">Teams</a></li>
+                <li class="has-children">
+                <a class="link" href="#">About</a>
+                 <ul class="dropdown" style="font-family:'Times New Roman', Times, serif;font-size: 75%;">
+                    <li><a href="{% url 'mainsite:aim' %}">Aim and objectives</a></li>
+                    <li><a href="{% url 'mainsite:background' %}">Background</a></li>
+                    <li><a href="{% url 'mainsite:activity'%}">Activities</a></li>
+                    <li><a href="{% url 'mainsite:teams' %}">Team</a></li>
+                   
+                  </ul>
+                </li>
+                
                 <li><a href="#">Outreach</a></li>
                 <li><a href="#">Resources</a></li>
                 <li><a href="#">News</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="{% url 'account:loginpage' %}">Login</a></li>
+                {% block nav %}
+
+                 
+                {%endblock%}
+                
               </ul>
             </nav>
           </div>
