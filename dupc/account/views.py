@@ -15,15 +15,13 @@ def loginpage(request):
             if user is not None:
                 login(request, user)
                 messages.info(request,"You are now logged in as {username}")
-                return redirect('/')
+                return redirect('mainsite:homepage')
             else:
-                messages.error(request, "Invalid username or password.")
+               return render(request,'login.html',{'error_message':'Invalid Password.'})
         else:
-            messages.error(request, "Invalid username or password.")
+           return render(request,'login.html',{'error_message':'Invalid Username or Password.'})
     form = AuthenticationForm()
-    return render(request = request,
-                    template_name = "login.html",
-                    context={"form":form}) 
+    return render(request,'login.html')
 
 def Logout(request):
     logout(request)

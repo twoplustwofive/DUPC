@@ -25,7 +25,7 @@ def add(request):
     if request.method == 'POST':
         
         
-        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body'] and request.FILES['img']:
+        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body'] and request.POST.get('img',False):
             tm = team()
             tm.name = request.POST['name']
             tm.email_id = request.POST['email']  
