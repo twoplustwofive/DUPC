@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.contrib import messages
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
@@ -49,6 +49,16 @@ def aim(request):
 
 
 def activity(request):
-    return render(request,'activity.html')
+    return render(request,'base.html')
 
 
+def detail(request,pk_id):
+    member = get_object_or_404(team,pk = pk_id)
+    return render(request,'detail.html',{'member': member}) 
+    
+
+@login_required(login_url = "/account")
+def remove(request,pk_id):
+    member = get_object_or_404(team,pk = pk_id)
+    member.delete()
+    return redirect('mainsite:teams')

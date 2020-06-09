@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block ccd %}
+        <div id="marine-content-inner"> 
+      <div class="container">
+        
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <br>
+              <h3 style="color:black" align = "center">Meet our Team</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+               <br>
+                {% if user.is_authenticated %}
+              <h4 class="breadcrumbs" align = "right"> <span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'mainsite:add'%}" role="button">Add Member</a></span></h4>
+                {%endif%}
+            </div>
+          </div>
+        
+        
+</div>
+<hr>
+
+    <div class = "container">
+    <p><img class=" img-fluid" height = "250px" width = "250px" src="{{member.image.url}}" alt="card image"></p>
+        <h4> {{member.name}} </h4>
+        <p> {{member.email_id}}</p>
+        <p>{{member.phone}}</p>
+        </p>{{member.information}}</p>
+    </div>
+
+{% endblock %}

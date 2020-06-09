@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 {%load static %}
+<style>
+
+   .navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+</style>
   <head>
     
     <title>Water Diplomacy</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+  
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
     <link rel="stylesheet" href="{% static "/fonts/icomoon/style.css" %}">
  
@@ -25,6 +34,7 @@
     <link rel="stylesheet" href="{%static "/css/aos.css" %}">
 
     <link rel="stylesheet" href="{% static "/css/style.css" %}">
+ 
     
   </head>
   <body>
@@ -39,72 +49,57 @@
       </div>
       <div class="site-mobile-menu-body"></div>
     </div>
+
+    <header class="site-navbar  position-relative py-1 bg-light">
+    <br>
+        <h1 style="font-family:verdana; color:black" class = "text-center ">Science Communication for Water Diplomacy in the Brahmaputra</h1>
     
-    <header class="site-navbar py-1 bg-light" role="banner" >
 
-      <div class="container" >
-      <brb>
-        <div class="row align-items-center">
-          
-           <div class="">
-            <h1 class="mb-0"><a class="text-black h2 mb-0" style="font-family:'Times New Roman', Times, serif;font-size: 110%;">Science communication for water diplomacy in the Brahmaputra</a></h1>
-          </div>
-          <div class="col-80 col-md-0 d-none d-xl-block">
-            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0" style="font-courier ;font-size: 150%;">
+      <li class="nav-item active">
+        <a class="nav-link" href="{%url 'mainsite:homepage'%}">Home <span class="sr-only">(current)</span></a>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{%url 'mainsite:aim' %}">Aim and Objective</a>
+          <a class="dropdown-item" href="{%url 'mainsite:background' %}">Background</a>
+          <a class="dropdown-item" href="{%url 'mainsite:activity'%}">Activities</a>
+        
+          <a class="dropdown-item" href="{%url 'mainsite:teams'%}">Team</a>
+        
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Outreach</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">News and Update</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#">Resources</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+     <a class="btn btn-secondary" href="{% url 'account:loginpage' %}" role="button">Login</a>
+    </form>
+  </div>
+  
+</nav>
+</header>
 
-              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block" style="font-family:'Times New Roman', Times, serif;font-size: 170%;">
-                
-                <li class="active"><a class="link" href="{% url 'mainsite:homepage' %}">Home</a></li>
-                <li class="has-children">
-                <a class="link" href="#">About</a>
-                 <ul class="dropdown" style="font-family:'Times New Roman', Times, serif;font-size: 75%;">
-                    <li><a href="{% url 'mainsite:aim' %}">Aim and objectives</a></li>
-                    <li><a href="{% url 'mainsite:background' %}">Background</a></li>
-                    <li><a href="{% url 'mainsite:activity'%}">Activities</a></li>
-                    <li><a href="{% url 'mainsite:teams' %}">Team</a></li>
-                   
-                  </ul>
-                </li>
-                
-                <li><a href="#">Outreach</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="{% url 'account:loginpage' %}">Login</a></li>
-                {% block nav %}
 
-                 
-                {%endblock%}
-                
-              </ul>
-            </nav>
-          </div>
-
-          <div class="col-10 col-xl-2 text-right">
-            <div class="d-none d-xl-inline-block">
-              <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                  <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
-                </li>
-                
-              </ul>
-            </div>
-
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-
-          </div>
-
-        </div>
-      </div>
-      
-    </header>
+    
 
   
 
@@ -120,8 +115,9 @@
      <br>
     {%endblock%}
 
-    
-    <footer class="site-footer">
+
+
+     <footer class="site-footer">
       <div class="container">
 
         <div class="row pt-5 mt-5 text-center">
@@ -143,6 +139,10 @@
         </div>
       </div>
     </footer>
+
+    
+    
+   
   </div>
   <script src="{% static "/js/jquery-3.3.1.min.js"%}"></script>
   <script src="{% static "/js/jquery-migrate-3.0.1.min.js" %}"></script>
