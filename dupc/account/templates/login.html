@@ -6,16 +6,35 @@
 
 {% block ccd %}
     
-<div class="container">
+<div class="container" >
+    <br>
     {% if user.is_authenticated %}
-    <h3>Welcome, {{user.username}}!</h3>
-    <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info"><a href={% url 'account:logoutpage' %}>Logout</a></button>
+    <h3 align = 'center'>Welcome, {{user.username}}!</h3>
+    <h2 align='center'><button align='center' style="background-color:#F4EB16; color:blue;" class="btn btn-outline-info"><a href={% url 'account:logoutpage' %}>Logout</a></button></h2>
+    <br>
     {% else %}
-    <form method="POST">
+    <h3 align = 'center'>Enter login credentials.</h3>
+    <form action = "#", method = 'POST' enctype = "multipart/form-data">
         {% csrf_token %}
-        {{form.as_p}}
-        <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
-    </form>
+     <div class="form-group">
+           <div class="col-3">
+            Username:
+               <input type="text" class="form-control" name ="username" aria-describedby="text" placeholder="Enter username">
+           </div>
+     </div>
+     <div class="form-group">
+           <div class="col-3">
+           Password:
+       <input type="password" class="form-control" name ="password" aria-describedby="emailHelp" placeholder="Enter password">
+       <small id="emailHelp" class="form-text text-muted"></small>
+       </div>
+     </div>
+
+     <div align  = "center" >
+     <button type="submit" class="btn btn-primary">Login</button>
+     </div>
+     </form>
+     <br>
     {% endif %}
 </div>
    
