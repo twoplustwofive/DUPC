@@ -2,9 +2,15 @@
  {% block ccd %}
     <br>
     <b><h3 style="padding-left: 6%;">Add Team Member Credentials</h3></b>
+    <div class = "container" >
+    <br><br>
     {% if error_message %}
-      <p><strong>{{ error_message }}</strong></p>
+      
+<div class="alert alert-danger" >
+  <strong>Warning!</strong> {{error_message}}
+</div>
     {% endif %}
+    </div>
 
     <form action = "#", method = 'POST' enctype = "multipart/form-data" >
      {% csrf_token %}
