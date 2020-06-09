@@ -10,7 +10,9 @@
     <br>
     {% if user.is_authenticated %}
     <h3 align = 'center'>Welcome, {{user.username}}!</h3>
-    <h2 align='center'><button align='center' style="background-color:#F4EB16; color:blue;" class="btn btn-outline-info"><a href={% url 'account:logoutpage' %}>Logout</a></button></h2>
+    <!-- <h2 align='center'><button align='center' style="background-color:#F4EB16; color:blue;" class="btn btn-success"><a href={% url 'account:logoutpage' %}>Logout</a></button></h2> -->
+    <p class="mb-0" align='center'><a href="{% url 'account:logoutpage' %}" class="btn btn-success py-2 px-4 text-white">Logout</a></p>
+
     <br>
     {% else %}
     <h3 align = 'center'>Enter login credentials.</h3>
@@ -31,7 +33,7 @@
      </div>
 
      <div align  = "center" >
-     <button type="submit" class="btn btn-primary">Login</button>
+     <button type="submit" class="btn btn-success">Login</button>
      </div>
      </form>
      <br>
