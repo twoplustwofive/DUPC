@@ -10,18 +10,19 @@
 <div id="marine-content-inner"> 
       <div class="container">
         
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <br>
-              <h3 style="color:black" align = "center">Meet our Team</h3>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-               <br>
-                {% if user.is_authenticated %}
-              <h4 class="breadcrumbs" align = "right"> <span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'mainsite:add'%}" role="button">Add Member</a></span></h4>
-                {%endif%}
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <br>
+          <b><h3 style="color:black;font-family: 'Times New Roman', Times, serif;padding-left: 5%;">Meet our Team</h3></b>
+        </div>
+        
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <br>
+            {% if user.is_authenticated %}
+          <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'mainsite:add'%}" role="button">Add Member</a></span></h4>
+            {%endif%}
+        </div>
+      </div>
         
         
 </div>
@@ -56,57 +57,11 @@
         <li class="transition">
           <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_01.png">
             <ul class="social">
-              <li>Young artist from Barcelona. She hates Comic Sans. <br>
-                Find her on:</li>
-              <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/facebook.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/skype.svg"></a></li>
+              <li>Young artist from Barcelona. She hates Comic Sans.</li>
+              <li class="transition"><a class="btn btn-black" href="#" role="button">More</a></li>
             </ul>
             <span class="transition">
             <h3>Lucy Copycat <em>CEO & Founder</em></h3>
-            <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div>
-        </li>
-        <li class="transition">
-          <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_02.png">
-            <ul class="social">
-              <li>Best lorem dolor guy from Detroit. Loves Helvetica. <br>
-                Find him on:</li>
-              <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/facebook.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/skype.svg"></a></li>
-            </ul>
-            <span class="transition">
-            <h3>Johan Van Font <em>Front end developer</em></h3>
-            <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div>
-        </li>
-        <li class="transition">
-          <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_03.png">
-            <ul class="social">
-              <li>Founder of Lorem dolor web site. Loves Verdana. <br>
-                Find him on:</li>
-              <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/facebook.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/skype.svg"></a></li>
-            </ul>
-            <span class="transition">
-            <h3>Johan Van Font <em>Front end developer</em></h3>
-            <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div>
-        </li>
-        <li class="transition">
-          <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_04.png">
-            <ul class="social">
-              <li>Times New Roman but in love with Verdana Bold. <br>
-                Find him on:</li>
-              <li class="transition"><a href="https://www.facebook.com"><img src="http://dooreight.com/codepen/people/twitter.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/behance.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/facebook.svg"></a></li>
-              <li class="transition"><a href="#"><img src="http://dooreight.com/codepen/people/skype.svg"></a></li>
-            </ul>
-            <span class="transition">
-            <h3>Johan Van Font <em>Front end developer</em></h3>
             <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div>
         </li>
       </ul>

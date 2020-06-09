@@ -8,11 +8,12 @@
 
 <div class="container" >
     <br>
-    <h3 align = 'center'>Enter login credentials.</h3>
+    <h3 style="padding-left: 1.5%;">Enter login credentials:</h3>
+    <br>
     {% if error_message %}
       <br>
     <div class="alert alert-danger" >
-            <strong>Warning!</strong> {{error_message}}
+        <strong>Warning!</strong> {{error_message}}
     </div>
     <br>
     {% endif %}
