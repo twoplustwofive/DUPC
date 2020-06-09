@@ -5,17 +5,18 @@
 {% extends 'base.html' %}
 
 {% block ccd %}
-    
+
 <div class="container" >
     <br>
-    {% if user.is_authenticated %}
-    <h3 align = 'center'>Welcome, {{user.username}}!</h3>
-    <!-- <h2 align='center'><button align='center' style="background-color:#F4EB16; color:blue;" class="btn btn-success"><a href={% url 'account:logoutpage' %}>Logout</a></button></h2> -->
-    <p class="mb-0" align='center'><a href="{% url 'account:logoutpage' %}" class="btn btn-success py-2 px-4 text-white">Logout</a></p>
-
-    <br>
-    {% else %}
     <h3 align = 'center'>Enter login credentials.</h3>
+    {% if error_message %}
+      <br>
+    <div class="alert alert-danger" >
+            <strong>Warning!</strong> {{error_message}}
+    </div>
+    <br>
+    {% endif %}
+
     <form action = "#", method = 'POST' enctype = "multipart/form-data">
         {% csrf_token %}
      <div class="form-group">
@@ -37,7 +38,7 @@
      </div>
      </form>
      <br>
-    {% endif %}
+    
 </div>
    
 {% endblock ccd %}
