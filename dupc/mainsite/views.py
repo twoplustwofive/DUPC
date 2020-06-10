@@ -6,7 +6,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from .models import team
-
+from django.utils.datastructures import MultiValueDictKeyError
 
 # Create your views here.
 
@@ -25,7 +25,12 @@ def add(request):
     if request.method == 'POST':
         
         
-        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body'] and request.POST.get('img',False):
+        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body']:
+            try:
+                fm = request.FILES['img']
+            except MultiValueDictKeyError:
+                return render(request, 'addteam.html',{'error_message':'All fields are required.'})
+                
             tm = team()
             tm.name = request.POST['name']
             tm.email_id = request.POST['email']  
