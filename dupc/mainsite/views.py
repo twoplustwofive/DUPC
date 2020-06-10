@@ -49,7 +49,7 @@ def aim(request):
 
 
 def activity(request):
-    return render(request,'base.html')
+    return render(request,'activity.html')
 
 
 def detail(request,pk_id):
