@@ -75,7 +75,7 @@ p {
   -moz-border-radius: 50%;
   height: 500px;
   width: 500px;
-  background: #39ff14;
+  background: #ADEFD1FF;
   display: block;
   position: absolute;
   bottom: -300px;
@@ -86,7 +86,7 @@ p {
   width: 50px;
 }
 .one > li span:hover {
-  background: #39ff14;
+  background: #ADEFD1FF;
 }
 .one > li h3 {
   margin-top: 40px;
