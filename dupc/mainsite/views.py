@@ -45,7 +45,7 @@ def add(request):
         return render(request,'addteam.html')
 
 def background(request):
-    return render(request,'background.html')
+    return render(request,'background1.html')
 
 
 
