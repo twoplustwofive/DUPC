@@ -49,7 +49,7 @@
     <header class="site-navbar  position-relative py-1 bg-light">
     <br>
     <div class = "container" align='center'>
-        <h1 style="font-family: 'Times New Roman', Times, serif; color:black;font-size: 261%;">Science Communication for Water Diplomacy in the Brahmaputra</h1>
+        <h1 style="font-family: 'Times New Roman', Times, serif; color:#393939;font-size: 261%;">Science Communication for Water Diplomacy in the Brahmaputra</h1>
     </div>
   <div class = "container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light ">
@@ -57,7 +57,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-1 " style="font-size: 150%;font-family: 'Times New Roman', Times, serif;">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-1 " style="font-size: 130%;font-family: 'Times New Roman', Times, serif;">
       <li class="nav-item">
         <a class="nav-link" href="{%url 'mainsite:homepage'%}">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -88,9 +88,9 @@
     
     </ul>
      {% if user.is_authenticated %}
-      <p class="mb-0"><a href="{% url 'account:logoutpage' %}" class="btn btn-primary py-2 px-4 text-white">Logout</a></p>
+      <p class="mb-0"><a href="{% url 'account:logoutpage' %}" class="btn btn-primary py-1 px-4 text-white">Logout</a></p>
       {%else%}
-      <p class="mb-0"><a href="{% url 'account:loginpage' %}" class="btn btn-primary py-2 px-4 text-white">Login</a></p>
+      <p class="mb-0"><a href="{% url 'account:loginpage' %}" class="btn btn-primary py-1 px-4 text-white">Login</a></p>
       {%endif%}
   </div>
   
