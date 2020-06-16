@@ -13,4 +13,5 @@ urlpatterns = [
     path('background/',views.background, name = 'background'),
     path('activities/',views.activity,name = 'activity'),
     path('teams/<int:pk_id>/remove/',views.remove,name = 'remove'),
+    path('contact/',views.contact,name = 'contact'),
 ]

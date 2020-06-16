@@ -67,3 +67,7 @@ def remove(request,pk_id):
     member = get_object_or_404(team,pk = pk_id)
     member.delete()
     return redirect('mainsite:teams')
+
+
+def contact(request):
+    return render(request,'contact.html')
