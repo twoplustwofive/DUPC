@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('mainsite.urls',namespace='mainsite')),
     path('account/',include('account.urls',namespace='account')),
+    path('news_and_updates/',include('news.urls',namespace = 'news')),
     
 ]+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
