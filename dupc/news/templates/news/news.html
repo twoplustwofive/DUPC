@@ -13,6 +13,21 @@
                       <br><h3>News and Updates</h3>
                     </div>
                 </div>
+                
+          </div>
+          <div class = "container">
+
+          {% for news in News.all %}
+          <br>
+          
+          <div class = "row">
+          
+            <h4>{{news.title}}</h4><br>
+            <p>{{news.day}}&nbsp;{{news.month}}&nbsp;{{news.year}}&nbsp;<a href = "{{news.url}}" target = "_blank">read news</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href = "{{news.file.url}}" target  = "_blank">read detail</a></p>
+            
+          </div>
+          <hr>
+          {%endfor%}
           </div>
       </div>
     </section>

@@ -6,5 +6,5 @@ from django.urls import path
 app_name = 'news'
 
 urlpatterns = [
-    path('',views.news,name = 'news'),
+    path('',views.newss,name = 'news'),
 ]
