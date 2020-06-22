@@ -8,4 +8,5 @@ app_name = 'news'
 urlpatterns = [
     path('',views.newss,name = 'news'),
     path('add/',views.addnews,name = 'add'),
+    path('<int:pk_id>/', views.detail, name = 'detail'),
 ]

@@ -3,6 +3,7 @@ from django.db import models
 
 class news(models.Model):
     title = models.CharField(max_length=500)
+    body = models.TextField(max_length = 3000 ,default= None)
     url = models.CharField(max_length=500)
     date = models.IntegerField(default=12)
     month = models.CharField(max_length=50,default="june")
