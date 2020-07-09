@@ -21,7 +21,7 @@ def addnews(request):
     if request.method == 'POST':
         
         
-        if request.POST['title'] and request.POST['date'] and request.POST['month'] and  request.POST['year']:
+        if request.POST['title'] and request.POST['detail'] and request.POST['date'] and request.POST['month'] and  request.POST['year']:
             ns = news()
             if request.POST['gridRadios1'] == "1" and request.POST['url']:
                 ns.url = request.POST['url']
@@ -44,6 +44,7 @@ def addnews(request):
             
             ns.title = request.POST['title']
             ns.date = request.POST['date']  
+            ns.body = request.POST['detail']
             ns.month = request.POST['month']
             ns.year = request.POST['year']
             ns.save()
@@ -52,3 +53,9 @@ def addnews(request):
             return render(request, 'news/create.html',{'error_message':'All fields are required.'})
     else:
         return render(request,'news/create.html')
+
+
+def detail(request,pk_id):
+    ns = get_object_or_404(news,id = pk_id)
+
+    return render(request,'news/detail.html',{'ns':ns})
