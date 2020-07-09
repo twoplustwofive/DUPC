@@ -12,6 +12,7 @@ urlpatterns = [
     path('aim/',views.aim,name = 'aim'),
     path('background/',views.background, name = 'background'),
     path('activities/',views.activity,name = 'activity'),
+    path('teams/anamika/' ,views.anamika,name  = 'anamika'),
     path('teams/<int:pk_id>/remove/',views.remove,name = 'remove'),
     path('contact/',views.contact,name = 'contact'),
 ]

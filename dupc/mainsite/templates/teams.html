@@ -2,10 +2,8 @@
 
 {% block ccd %}
 {% load static %}
-<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link rel="stylesheet" href="{% static "/css/teams.css" %}">
 
 <div id="marine-content-inner"> 
       <div class="container">
@@ -28,20 +26,30 @@
 </div>
 
 <hr>    
-    <!-- <div class = "container">
+     <div class = "container">
     <div class = "row">
+            <div class="col-3">
+                  <div class="card bg-light text-black" style = "height:380px ; width:250px;">
+                    <div class="card-body text-center">
+                      <p><img class=" img-fluid" src="/static/images/anamika.JPG" alt="card image" width = "50%" height = "50%" ></p>
+                      <h5 class="card-title" style = "color:blue">Dr. Anamika Barua</h5>
+                      <p>Associate professor in the Dept. of Humanities and Social Sciences, Indian Institute of Technology Guwahati (IITG),</p>
+                      <a class="btn btn-dark" href="{%url 'mainsite:anamika' %}" role="button">Detail</a>
+                    </div>
+                  </div>
+            </div>
      {%for member in tm.all%}
-            <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-3">
                 <div class="frontside ">
-                            <div class="card bg-light text-black" >
+                            <div class="card bg-light text-black" style = "height:380px ; width:250px;">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-thumbnail" src="{{member.image.url}}" alt="card image"></p>
-                                    <h5 class="card-title">{{member.name}}</h5>
-                                    <p>{{member.email_id}}</p>
-                                   <a class="btn btn-dark" href="{%url 'mainsite:detail' member.id %}" role="button">Detail</a>
+                                    <p><img class=" img-fluid" src="{{member.image.url}}" alt="card image" width = "50%" ></p>
+                                    <h5 class="card-title" style = "color:blue">{{member.name}}</h5>
+                                    <p>{{member.designation}}</p>
+                                   <p><a class="btn btn-dark" href="{%url 'mainsite:detail' member.id %}" role="button">Detail</a>
                                    {% if user.is_authenticated %}
-                                   <a class="btn btn-dark" href="{%url 'mainsite:detail' member.id%}remove" role="button">Remove Member</a>
-                                    {%endif%}
+                                   <a class="btn btn-dark" href="{%url 'mainsite:detail' member.id%}remove" role="button">Remove</a>
+                                    {%endif%}</p>
                                 </div>
                             </div>
                 </div>
@@ -51,42 +59,8 @@
 
     </div>
 
-    </div> -->
-    <b align='center'>
-      <ul class="one">
-        <li class="transition">
-          <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_01.png">
-            <ul class="social">
-              <li>Young artist from Barcelona. She hates Comic Sans.</li>
-              <li class="transition"><a class="btn btn-primary" href="#" role="button">Know more</a></li>
-            </ul>
-            <span class="transition">
-            <h3 style="color:#00203FFF;">Anamika Barua<em>CEO & Founder</em></h3>
-            <!-- <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div> -->
-        </li>
-        <li class="transition">
-          <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_01.png">
-            <ul class="social">
-              <li>Young artist from Barcelona. She hates Comic Sans.</li>
-              <li class="transition"><a class="btn btn-primary" href="#" role="button">Know more</a></li>
-            </ul>
-            <span class="transition">
-            <h3 style="color:#00203FFF;">Arundhati Deka<em>CEO & Founder</em></h3>
-            <!-- <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div> -->
-        </li>
-        <li class="transition">
-          <div class="wrapper"> <img class="transition" src="http://dooreight.com/codepen/people/img_01.png">
-            <ul class="social">
-              <li>Young artist from Barcelona. She hates Comic Sans.</li>
-              <li class="transition"><a class="btn btn-primary" href="#" role="button">Know more</a></li>
-            </ul>
-            <span class="transition">
-            <h3 style="color:#00203FFF;">Sumit Vij<em>CEO & Founder</em></h3>
-            <!-- <img src="http://dooreight.com/codepen/people/more.svg"> </span> </div> -->
-        </li>
-      </ul>
-      
-    </b>
+    </div> 
+
 
 
 

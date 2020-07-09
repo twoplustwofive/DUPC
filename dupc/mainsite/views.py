@@ -25,7 +25,7 @@ def add(request):
     if request.method == 'POST':
         
         
-        if request.POST['name'] and request.POST['email'] and request.POST['phone'] and  request.POST['body']:
+        if request.POST['name'] and request.POST['designation'] and request.POST['body']:
             try:
                 fm = request.FILES['img']
             except MultiValueDictKeyError:
@@ -33,8 +33,7 @@ def add(request):
                 
             tm = team()
             tm.name = request.POST['name']
-            tm.email_id = request.POST['email']  
-            tm.phone = request.POST['phone']
+            tm.designation = request.POST['designation']
             tm.information = request.POST['body']
             tm.image = request.FILES['img']
             tm.save()
@@ -60,6 +59,9 @@ def activity(request):
 def detail(request,pk_id):
     member = get_object_or_404(team,pk = pk_id)
     return render(request,'detail.html',{'member': member}) 
+
+def anamika(request):
+    return render(request,'detail_anamika.html')
     
 
 @login_required(login_url = "/account")
