@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block ccd %}
+   
+    
+
+
+<div class="page-heading style3 wrapper border-bottom ">
+    <div class = "container">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <br><h3>Podcasts</h3>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+              {% if user.is_authenticated %}
+              <br>
+               <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'outreach:addpod'%}" role="button">Add</a></span></h4>
+              {%endif%}
+         </div>
+    </div>
+    </div>  
+</div>
+
+{% endblock ccd %}
+

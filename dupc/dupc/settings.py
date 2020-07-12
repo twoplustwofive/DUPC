@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'mainsite.apps.MainsiteConfig',
     'account.apps.AccountConfig',
+    'outreach.apps.OutreachConfig',
     'news.apps.NewsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block ccd %}
+    <br>
+    <b><h3 style="padding-left: 13%;">Add Podcasts</h3></b>
+    
+    <div class = "container" >
+    <br>
+    {% if error_message %}
+      
+<div class="alert alert-danger" >
+  <strong>Warning!</strong> {{error_message}}
+</div>
+    {% endif %}
+    </div>
+
+<form method = 'POST' enctype = "multipart/form-data">
+    {% csrf_token %}
+    <br><br>
+    <div class = "container">
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="title">Title</label>
+      <textarea class="form-control" name = "title" id = "title" rows="1" placeholder ="Enter title"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="detail">Detail about the topic</label>
+      <textarea class="form-control" name = "detail" id = "title" rows="4" placeholder ="Detail"></textarea>
+    </div>
+  </div>
+  
+  <div class="form-row">
+    <div class="form-group col-sm-3">
+      <label for="day">Date</label>
+      <input type="text" class="form-control" id="date" name = "date">
+    </div>
+    <div class="form-group col-sm-3">
+      <label for="month">Month</label>
+      <select id="month" class="form-control" name = "month">
+        <option selected>Choose...</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+    </div>
+    <div class="form-group col-sm-3">
+      <label for="year">Year</label>
+      <input type="text" class="form-control" id="year" name = "year">
+    </div>
+  </div>
+    <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="url">Url</label>
+      <input type="text" class="form-control" id="url" name = "url">
+    </div>
+    </div>
+  
+ 
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</div>
+<br><br>
+
+{% endblock ccd %}
+
