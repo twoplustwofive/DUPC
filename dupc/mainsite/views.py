@@ -12,7 +12,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 
 
 def homepage(request):
-    return render(request,'index.html')
+    return render(request,'index1.html')
 
 
 
