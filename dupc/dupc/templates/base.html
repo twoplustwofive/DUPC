@@ -1,6 +1,6 @@
  
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden; ">
 {%load static %}
 <style>
 
@@ -79,8 +79,12 @@
       <li class="nav-item">
         <a class="nav-link" href="{%url 'news:news'%}">News and Updates</a>
       </li>
-        <li class="nav-item">
-        <a class="nav-link" href="#">Resources</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+        <div class="dropdown-menu" style="font-size: 90%;font-family: 'Times New Roman', Times, serif;" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Publication</a>
+          <a class="dropdown-item" href="#">Project Reports</a>
+        </div>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="{%url 'mainsite:contact'%}">Contact</a>
@@ -117,28 +121,26 @@
 
 
 
-     <footer class="site-footer">
-      <div class="container">
+     <!-- <footer class="site-footer"> -->
+      <div class="container-fluid" style="background-color: #46464E;">
 
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
+              <a href="#" class="pl-0 pr-3"><span class="icon-facebook" style="color: #fff;"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter" style="color: #fff;"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram" style="color: #fff;"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin" style="color: #fff;"></span></a>
             </div>
-
-            <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+            <font color="#fff">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </font>
+            <br><br><br>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
           </div>
           
         </div>
       </div>
-    </footer>
+    <!-- </footer> -->
 
     
     
