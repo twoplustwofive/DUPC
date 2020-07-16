@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block ccd %}
+	
+	<br>
+    <b><h3 style="padding-left: 13%;">Add Publications</h3></b>
+    <div class="container">
+    	<form method="POST" action="#" enctype="multipart/form-data" name="publicationform">
+	    	{% csrf_token %}
+	    	<br><br>
+	    	{{ pubform.as_p }}
+	    </form>	
+    </div>
+    
+
+{% endblock %}
