@@ -1,33 +1,40 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404,redirect	
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from django.utils.datastructures import MultiValueDictKeyError
-from .forms import *
 from .models import *
 
 # Create your views here.
 def publicationss(request):
-	Publication = publication.objects.filter(admin_approved=True)
+	Publication = publication.objects
 	return render(request, 'publication/publication.html',{'Publication':Publication})
 
 @login_required(login_url = "/account")
 def addpublication(request):
-	if request.method=='POST':
-		pubform = publicationform(request.POST)
-		if pubform.is_valid():
-			pubform.save()
-			pubform = publicationform()
-			allpubs = publication.objects.filter(admin_approved=True)
-			return render(request, 'publication/create.html', {'pubform':pubform, 'allpubs':allpubs})
+	if request.method == 'POST':
+		if request.POST['author'] and request.POST['title'] and request.POST['name'] and request.POST['url']:
+			pub = publication()
+			if request.POST['gridRadios'] == "1":
+				try:
+					fm = request.FILES['fl']
+				except MultiValueDictKeyError:
+					return render(request,'publication/create.html',{'error_message':'Select File Or Change Option'})
+				
+				pub.pdf = request.FILES['fl']
+				pub.has_pdf = True
+			else:
+				pub.has_pdf = False
+			
 
+			pub.authors = request.POST['author']
+			pub.title = request.POST['title']
+			pub.name = request.POST['name']
+			pub.link = request.POST['url']
+			pub.save()
+			return redirect('publication:publication')
 		else:
-			pubform = publicationform()
-			allpubs = publication.objects.filter(admin_approved=True)
-			return render(request, 'publication/create.html', {'pubform':pubform, 'allpubs':allpubs})
-
+			return render(request,'publication/create.html',{'error_message':'All Field Required'})
 	else:
-		pubform = publicationform()
-		allpubs = publication.objects.filter(admin_approved=True)
-		return render(request, 'publication/create.html', {'pubform':pubform, 'allpubs':allpubs})
+		return render(request,'publication/create.html')

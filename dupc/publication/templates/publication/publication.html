@@ -19,24 +19,25 @@
 					</div>
 				</div>
 				<div class="container">
-					{% if Publication %}
+					<br>
+					{% for publication in Publication.all %}
 
-						{% for pub in Publication.all %}
-							<br>
-							<div class="row">
-								{{pub.authors}}, <i>{{pub.title}}</i>, <strong>{{pub.name}}</strong><br>
-								{% if pub.pdf %}
-									Visit <a href="{{ pub.pdf }}">here</a>
-								{% else %}
-									Visit <a href="{{ pub.link }}">here</a>
-								{% endif %}	
-							</div>
-							
-						{% endfor %}
-					{% else %}
-						<br><p></p>
-					{% endif %}
-
+					<div class="jumbotron">
+						<h2 class="display-5" style= "color:Grey">{{publication.title}}</h2>
+						<p class="lead"><b><b>Authors:</b></b>&nbsp;&nbsp;{{publication.authors}}</p>
+						<p class="lead"><b><b>Book/Journal Name:</b></b>&nbsp;&nbsp;{{publication.name}}</p>
+						<p class="lead">
+						  <a class="btn btn-primary" href="{{publication.link}}" target="_blank" role="button">Learn more</a>
+						</p>
+						{% if publication.has_pdf == True %}
+						<p class="lead">
+							<a class="btn btn-primary" href="{{publication.pdf.url}}" target="_blank" role="button">Read more</a>
+						  </p>
+						  {%endif%}
+						
+					  </div>
+        			
+					{%endfor%}
 				</div>
 			</div>
 		</section>

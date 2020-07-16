@@ -1,16 +1,79 @@
 {% extends 'base.html' %}
 
 {% block ccd %}
-	
-	<br>
-    <b><h3 style="padding-left: 13%;">Add Publications</h3></b>
-    <div class="container">
-    	<form method="POST" action="#" enctype="multipart/form-data" name="publicationform">
-	    	{% csrf_token %}
-	    	<br><br>
-	    	{{ pubform.as_p }}
-	    </form>	
-    </div>
+      <br>
+      <b><h3 style="padding-left: 13%;">Add Publications</h3></b>
     
+    <div class = "container" >
+    <br>
+    {% if error_message %}
+      
+<div class="alert alert-danger" >
+  <strong>Warning!</strong> {{error_message}}
+</div>
+    {% endif %}
+    </div>
 
-{% endblock %}
+<form method = 'POST' action = "#" enctype = "multipart/form-data">
+    {% csrf_token %}
+    <br><br>
+    <div class = "container">
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="author">Authors</label>
+      <textarea class="form-control" name = "author" id = "author" rows="1" placeholder ="Enter Authers followed by,"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="title">Title</label>
+      <textarea class="form-control" name = "title" id = "title" rows="1" placeholder ="Title of Publication"></textarea>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" name = "name" placeholder=" Book/Journal Name">
+    </div>
+    </div>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="url">Url</label>
+      <input type="text" class="form-control" id="url" name = "url" placeholder="insert URL">
+    </div>
+	</div>
+	
+     <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Have File</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="1" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Yes
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="0">
+          <label class="form-check-label" for="gridRadios2">
+            No
+          </label>
+        </div>
+        
+      </div>
+    </div>
+  </fieldset><br>
+   
+    
+  <div class="form-group">
+      <label for="fl">Upload File</label>
+    <input type = "file" class = "form-control-file" name = "fl" id = "fl">
+  </div><br>
+ 
+  <button type="submit" class="btn btn-primary">Add</button>
+</form>
+</div>
+<br><br>
+
+{% endblock ccd %}
+
