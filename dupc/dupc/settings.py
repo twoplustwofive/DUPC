@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'outreach.apps.OutreachConfig',
     'news.apps.NewsConfig',
+    'reports.apps.ReportsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

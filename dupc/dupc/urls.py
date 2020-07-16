@@ -10,5 +10,6 @@ urlpatterns = [
     path('publication/',include('publication.urls',namespace='publication')),
     path('news_and_updates/',include('news.urls',namespace = 'news')),
     path('outreach/',include('outreach.urls',namespace = 'outreach')),
+    path('reports/',include('reports.urls',namespace='reports')),
 ]+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 

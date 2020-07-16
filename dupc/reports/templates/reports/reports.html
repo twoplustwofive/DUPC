@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block ccd %}
+
+	<div id="marine-content-inner">
+		<section id="main-content">
+			<div class="container">
+				<div class="page-heading style3 wrapper border-bottom">
+					<div class="row">
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							<br><h3>Reports</h3>
+						</div>
+						<div class="col-lg-6 col-md-6 col-sm-6">
+							{% if user.is_authenticated %}
+                          <br>
+                           <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'reports:add'%}" role="button">Add Reports</a></span></h4>
+                          {%endif%}
+						</div>
+					</div>
+				</div>
+				<div class="container">
+                    <br>
+                    {%for report in rp.all%}
+
+                    <div class="jumbotron">
+                        <h3 class="display-5" style = "color:rgb(138, 19, 19)">{{report.title}}</h3>
+                        <p class="lead">{{report.date}},&nbsp;{{report.month}},&nbsp;{{report.year}}</p>
+                        <p class="lead">
+                          <a class="btn btn-primary" href="{{report.file.url}}" target = "_blank" role="button">View Report</a>
+                        </p>
+                      </div>
+
+                    {%endfor%}
+				</div>
+			</div>
+		</section>
+	</div>
+
+{% endblock %}
+
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script> 
+<script type="text/javascript" src="assets/js/SmoothScroll.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.prettyPhoto.js"></script> 
+<script type="text/javascript" src="assets/js/modernizr.js"></script> 
+<script type="text/javascript" src="assets/js/wow.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.sharre.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.knob.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script> 
+<script type="text/javascript" src="assets/js/masonry.min0226.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.masonry.min0226.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script> 
+<script type="text/javascript" src="assets/js/perfect-scrollbar-0.4.10.with-mousewheel.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.nouislider.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.validity.min.js"></script> 
+<script type="text/javascript" src="assets/js/tweetie.min.js"></script> 
+<script type="text/javascript" src="assets/js/script.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.themepunch.enablelog.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script> 
+<script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script> 
