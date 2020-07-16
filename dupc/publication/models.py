@@ -1,0 +1,10 @@
+from django.db import models
+
+# Create your models here.
+class publication(models.Model):
+	authors = models.CharField(max_length=120)
+	title = models.CharField(max_length=100)
+	name = models.CharField(max_length=70)
+	pdf = models.FileField(upload_to='files/',blank=True)
+	link = models.CharField(max_length=500,blank=True)
+	admin_approved = models.BooleanField(default=False)
