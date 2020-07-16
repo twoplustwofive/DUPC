@@ -11,5 +11,6 @@ urlpatterns = [
     path('news_and_updates/',include('news.urls',namespace = 'news')),
     path('outreach/',include('outreach.urls',namespace = 'outreach')),
     path('reports/',include('reports.urls',namespace='reports')),
+    path('stories/',include('stories.urls',namespace='stories')),
 ]+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
 
