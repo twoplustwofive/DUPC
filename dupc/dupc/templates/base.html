@@ -13,7 +13,7 @@
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"> 
     <link rel="stylesheet" href="{% static "/fonts/icomoon/style.css" %}">
- 
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link rel="stylesheet" href="{% static "/css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{%static "/css/magnific-popup.css"%}">
     <link rel="stylesheet" href="{%static "/css/jquery-ui.css"%}">
@@ -46,18 +46,18 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-    <header class="site-navbar  position-relative py-1 bg-light">
+    <header class="site-navbar  position-relative py-1 bg-white">
     <br>
-    <div class = "container" align='center'>
-        <h1 style="font-family: 'Times New Roman', Times, serif; color:#314455;font-size: 261%;">Science Communication for Water Diplomacy in the Brahmaputra</h1>
+    <div class = "container" align ='center'>
+        <h1 style="font-family: 'Raleway'; color:#169EB7;font-size: 250%;"><b>Science Communication for Water Diplomacy in the Brahmaputra</b></h1>
     </div>
   <div class = "container">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <nav class="navbar navbar-expand-lg navbar-light bg-white" style = "padding-left:30px;" >
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-1 " style="font-size: 130%;font-family: 'Times New Roman', Times, serif;">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-1 " style="font-size: 150%;font-family:'Raleway';">
       <li class="nav-item">
         <a class="nav-link" href="{%url 'mainsite:homepage'%}">Home <span class="sr-only">(current)</span></a>
       </li>
@@ -65,8 +65,8 @@
         <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About
         </a>
-        <div class="dropdown-menu" style="font-size: 90%;font-family: 'Times New Roman', Times, serif;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{%url 'mainsite:aim' %}">Aim and Objectives</a>
+        <div class="dropdown-menu" style="font-size: 100%;font-family: 'Raleways'" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{%url 'mainsite:aim' %}">Aims and Objectives</a>
           <a class="dropdown-item" href="{%url 'mainsite:background' %}">Background</a>
           <a class="dropdown-item" href="{%url 'mainsite:activity'%}">Activities</a>
         
@@ -92,11 +92,7 @@
       </li>
     
     </ul>
-     {% if user.is_authenticated %}
-      <p class="mb-0"><a href="{% url 'account:logoutpage' %}" class="btn btn-primary py-1 px-4 text-white">Logout</a></p>
-      {%else%}
-      <p class="mb-0"><a href="{% url 'account:loginpage' %}" class="btn btn-primary py-1 px-4 text-white">Login</a></p>
-      {%endif%}
+     
   </div>
   
 </nav>
@@ -123,15 +119,23 @@
 
 
      <!-- <footer class="site-footer"> -->
-      <div class="container-fluid" style="background-color: #46464E;">
+      <div class="container-fluid" style="">
 
         <div class="row pt-5 mt-5 text-center">
           <div class="col-md-12">
             <div class="mb-5">
-              <a href="#" class="pl-0 pr-3"><span class="icon-facebook" style="color: #fff;"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-twitter" style="color: #fff;"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-instagram" style="color: #fff;"></span></a>
-              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin" style="color: #fff;"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-facebook" style=";"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-twitter" style=""></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-instagram" style=""></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-linkedin" style=""></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-researchgate" style=""></span></a>
+              {% if user.is_authenticated %}
+      <p class="mb-0"><a href="{% url 'account:logoutpage' %}" class="btn btn-primary py-1 px-4 text-white">Logout</a></p>
+      {%else%}
+      <p class="mb-0"><a href="{% url 'account:loginpage' %}" class="btn btn-primary py-1 px-4 text-white">Login</a></p>
+      {%endif%}
+              
+
             </div>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             <font color="#fff">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </font>
@@ -147,6 +151,7 @@
     
    
   </div>
+ 
   <script src="{% static "/js/jquery-3.3.1.min.js"%}"></script>
   <script src="{% static "/js/jquery-migrate-3.0.1.min.js" %}"></script>
   <script src="{% static "/js/jquery-ui.js" %}"></script>
