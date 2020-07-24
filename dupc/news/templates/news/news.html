@@ -24,14 +24,11 @@
 
           {% for news in News.all %}
           <br>
-          
           <div class = "row">
-          
-            <h5><a href = "{%url 'news:detail' news.id %}">{{news.title}}</a></h5><br>
-            <p> {{news.month}}&nbsp;{{news.date}},&nbsp;{{news.year}}&nbsp;
-            
-            </p>
-            
+            <div class="jumbotron" style = "background:white;">
+              <h4><a href = "{%url 'news:detail' news.id %}">{{news.title}}</a></h4>
+                <p class="">&nbsp;&nbsp;-{{news.month}}&nbsp;{{news.date}},&nbsp;{{news.year}}&nbsp;</p>
+            </div>
           </div>
           <hr>
           {%endfor%}

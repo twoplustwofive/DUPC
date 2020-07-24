@@ -9,7 +9,8 @@ from .models import podcast
 
 
 def outreach(request):
-    return render(request,'outreach/outreach.html')
+    pc = podcast.objects
+    return render(request,'outreach/outreach.html',{'pc':pc})
 
 
 @login_required
