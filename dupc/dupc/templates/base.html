@@ -30,8 +30,16 @@
 
     <link rel="stylesheet" href="{% static "/css/style.css" %}">
     <link rel="stylesheet" href="{% static "/css/custom.css" %}">
- 
-    
+<!--     <style type="text/css">
+      .nav-pills .nav-link.active, .nav-pills .nav-link.active:hover, .nav-pills .nav-link.active:focus{
+        font-weight: 550;
+        color: white;
+        background-color: #169EB7;
+      }
+      .nav-link .active{
+        background-color: #169EB7;
+      }
+    </style> -->
   </head>
   <body>
   
@@ -49,7 +57,7 @@
     <header class="site-navbar  position-relative py-1 bg-white">
     <br>
     <div class = "container" align ='center'>
-        <h1 style="font-family: 'Raleway'; color:#169EB7;font-size: 250%;"><b>Science Communication for Water Diplomacy in the Brahmaputra</b></h1>
+        <h1 style="font-family: 'Raleway'; color:#169EB7;font-size: 250%; font-weight: bolder;"><b>Science Communication for Water Diplomacy in the Brahmaputra</b></h1>
     </div>
   <div class = "container">
   <nav class="navbar navbar-expand-lg navbar-light bg-white" style = "padding-left:30px;" >
@@ -57,20 +65,19 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-1 " style="font-size: 150%;font-family:'Raleway';">
+    <ul class="navbar-nav nav mt-2 mt-lg-1 nav-fill w-100 nav-pills" style="font-size: 150%;font-family:'Raleway';">
       <li class="nav-item">
-        <a class="nav-link" href="{%url 'mainsite:homepage'%}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="{%url 'mainsite:homepage'%}">Home <span class="sr-only">(current)</span></a>
       </li>
        <li class="nav-item dropdown">
         <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           About
         </a>
         <div class="dropdown-menu" style="font-size: 100%;font-family: 'Raleways'" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{%url 'mainsite:aim' %}">Aims and Objectives</a>
-          <a class="dropdown-item" href="{%url 'mainsite:background' %}">Background</a>
-          <a class="dropdown-item" href="{%url 'mainsite:activity'%}">Activities</a>
-        
-          <a class="dropdown-item" href="{%url 'mainsite:teams'%}">Team</a>
+          <a class="dropdown-item nav-link" href="{%url 'mainsite:aim' %}">Aims and Objectives</a>
+          <a class="dropdown-item nav-link" href="{%url 'mainsite:background' %}">Background</a>
+          <a class="dropdown-item nav-link" href="{%url 'mainsite:activity'%}">Activities</a>
+          <a class="dropdown-item nav-link" href="{%url 'mainsite:teams'%}">Team</a>
         </div>
       </li>
       <li class="nav-item">
@@ -82,9 +89,9 @@
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
         <div class="dropdown-menu" style="font-size: 90%;font-family: 'Times New Roman', Times, serif;" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'publication:publication' %}">Publication</a>
-          <a class="dropdown-item" href="{% url 'reports:reports' %}">Project Reports</a>
-          <a class="dropdown-item" href="{% url 'stories:stories' %}">Multimedia-Stories</a>
+          <a class="dropdown-item nav-link" href="{% url 'publication:publication' %}">Publication</a>
+          <a class="dropdown-item nav-link" href="{% url 'reports:reports' %}">Project Reports</a>
+          <a class="dropdown-item nav-link" href="{% url 'stories:stories' %}">Multimedia-Stories</a>
         </div>
       </li>
       <li class="nav-item ">
@@ -119,23 +126,30 @@
 
 
      <!-- <footer class="site-footer"> -->
-      <div class="container-fluid" style="">
+      <data></data>
+      <div class="container-fluid" style="background-color: #169EB7;">
 
-        <div class="row pt-5 mt-5 text-center">
+        <div class="row pt-5 mt-5 mx-4">
           <div class="col-md-12">
             <div class="mb-5">
-              <a href="#" class="pl-3 pr-3"><span class="icon-facebook" style=";"></span></a>
+              <a href="#" class="pl-3 pr-3"><span class="icon-facebook" style=""></span></a>
               <a href="#" class="pl-3 pr-3"><span class="icon-twitter" style=""></span></a>
               <a href="#" class="pl-3 pr-3"><span class="icon-instagram" style=""></span></a>
               <a href="#" class="pl-3 pr-3"><span class="icon-linkedin" style=""></span></a>
               <a href="#" class="pl-3 pr-3"><span class="icon-researchgate" style=""></span></a>
               {% if user.is_authenticated %}
-      <p class="mb-0"><a href="{% url 'account:logoutpage' %}" class="btn btn-primary py-1 px-4 text-white">Logout</a></p>
-      {%else%}
-      <p class="mb-0"><a href="{% url 'account:loginpage' %}" class="btn btn-primary py-1 px-4 text-white">Login</a></p>
-      {%endif%}
-              
-
+                <p class="mb-0"><a href="{% url 'account:logoutpage' %}" class="btn btn-primary py-1 px-4 text-white">Logout
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg>
+                </a></p>
+              {%else%}
+                <p class="mb-0"><a href="{% url 'account:loginpage' %}" class="btn btn-primary py-1 px-4 text-white">Login
+                  <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12.14 8.753l-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+</svg>
+                </a></p>
+              {%endif%}
             </div>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             <font color="#fff">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved </font>
