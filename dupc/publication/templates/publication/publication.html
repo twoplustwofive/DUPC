@@ -19,25 +19,28 @@
 					</div>
 				</div>
 				<div class="container">
-					<br>
+					<main role="main">
 					{% for publication in Publication.all %}
+					<br>
 
-					<div class="jumbotron">
-						<h2 class="display-5" style= "color:Grey">{{publication.title}}</h2>
-						<p class="lead"><b><b>Authors:</b></b>&nbsp;&nbsp;{{publication.authors}}</p>
-						<p class="lead"><b><b>Book/Journal Name:</b></b>&nbsp;&nbsp;{{publication.name}}</p>
+					<div class="container" style = "border-style:solid; border-radius:5px; border-width:0.5px;" >
+						<br>
+						<h2 style="font-family: 'Raleway'; color:#169EB7;font-size: 150%; font-weight: bolder;">{{publication.title}}</h2>
+						<p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;"><b>Authors:</b></b>&nbsp;&nbsp;{{publication.authors}}</p>
+						<p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;"><b><b>Book/Journal Name:</b></b>&nbsp;&nbsp;{{publication.name}}</p>
 						<p class="lead">
-						  <a class="btn btn-primary" href="{{publication.link}}" target="_blank" role="button">Learn more</a>
+						  <p><a class="btn btn-secondary" href="{{publication.link}}" target="_blank" role="button">Learn More &raquo;</a></p>
 						</p>
 						{% if publication.has_pdf == True %}
 						<p class="lead">
-							<a class="btn btn-primary" href="{{publication.pdf.url}}" target="_blank" role="button">Read more</a>
+							<p><a class="btn btn-secondary" href="{{publication.pdf.url}}" target="_blank" role="button">Read More &raquo;</a></p>
 						  </p>
 						  {%endif%}
 						
 					  </div>
         			
 					{%endfor%}
+					</main>
 				</div>
 			</div>
 		</section>

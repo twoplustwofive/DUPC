@@ -19,20 +19,20 @@
 					</div>
 				</div>
 				<div class="container"><br>
-				  <main role="main">
-            <div class="row">
+			<main role="main">
+            
             {% for podcast in pc.all%}
-              <div class="col-md-4" style = "border-style:groove;">
-                <div class = "container">
+              
+                <div class = "container" style = "border-style:solid; border-radius:5px; border-width:0.5px;">
                 <br>
                 <h2 style="font-family: 'Raleway'; color:#169EB7;font-size: 150%; font-weight: bolder;">{{podcast.title}}</h2>
                 <p>&nbsp;&nbsp;-{{podcast.month}}&nbsp;{{podcast.date}},&nbsp;{{podcast.year}}&nbsp;</p>
                 <p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;">{{podcast.body}}</p>
                 <p><a class="btn btn-secondary" href="{{podcast.url}}" target="_blank" role="button">View details &raquo;</a></p>
-                </div>
-              </div>
+                </div><br>
+            
               {%endfor%}
-            </div>
+            
           </main>
         </div>
 				</div>

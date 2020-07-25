@@ -19,27 +19,21 @@
 					</div>
 				</div>
 				<div class="container">
-					{% for story in st.all%}
-                    <br>
-					<div class="jumbotron">
-						<div class = "row">
-						<div class = "col-4">
-							<div class="text-left">
-								<img src="{{story.image.url}}" class="img-fluid"  style = "width: 350px; height: 150px;" alt="Responsive image">
-							  </div><br>
-						</div>
-						<div class = "col-8">
-						<h3 class="display-5 text-left" style = "color:rgb(172, 27, 87)">{{story.title}}</h3>
-						<p class="lead text-left" style = "font-size: medium;" >By- {{story.name}}</p>
-						</div>
-						</div>
-						<hr class="my-4">
-					<br>
-					<div class = "text-center">
-						<iframe width="450" height="180"src="{{story.url}}"></iframe>
-					  </div>
-					  </div>
-					  {%endfor%}
+				<main role="main">
+            	{% for story in st.all%}
+				<br>
+              
+                <div class = "container" style = "border-style:solid; border-radius:5px; border-width:0.5px;">
+                <br>
+                <h2 style="font-family: 'Raleway'; color:#169EB7;font-size: 150%; font-weight: bolder;">{{story.title}}</h2>
+                <p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 100%; font-weight: bolder; text-align:justify;">&nbsp;By -{{story.name}}</p>
+                <p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;">{{story.body}}</p>
+                <div style = "text-align:center;"><iframe src="{{story.url}}" height="300" width="650" title="Iframe Example"></iframe></div><br>
+                </div><br>
+            
+              {%endfor%}
+            
+          </main>
 				</div>
 			</div>
 		</section>

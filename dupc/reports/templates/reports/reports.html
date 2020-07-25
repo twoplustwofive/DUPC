@@ -18,20 +18,23 @@
 						</div>
 					</div>
 				</div>
-				<div class="container">
-                    <br>
-                    {%for report in rp.all%}
-
-                    <div class="jumbotron">
-                        <h3 class="display-5" style = "color:rgb(138, 19, 19)">{{report.title}}</h3>
-                        <p class="lead">{{report.date}},&nbsp;{{report.month}},&nbsp;{{report.year}}</p>
-                        <p class="lead">
-                          <a class="btn btn-primary" href="{{report.file.url}}" target = "_blank" role="button">View Report</a>
-                        </p>
-                      </div>
-
-                    {%endfor%}
-				</div>
+				<div class="container"><br>
+				  <main role="main">
+            <div class="row">
+            {% for report in rp.all%}
+              <div class="col-md-4" >
+                <div class = "container" style = "border-style:solid; border-radius:5px; border-width:0.5px;">
+                <br>
+                <h2 style="font-family: 'Raleway'; color:#169EB7;font-size: 150%; font-weight: bolder;">{{report.title}}</h2>
+                <p>&nbsp;&nbsp;-{{report.month}}&nbsp;{{report.date}},&nbsp;{{report.year}}&nbsp;</p>
+                
+                <p><a class="btn btn-secondary" href="{{report.file.url}}"role="button">View Report &raquo;</a></p>
+                </div>
+              </div>
+              {%endfor%}
+            </div>
+          </main>
+        </div>
 			</div>
 		</section>
 	</div>

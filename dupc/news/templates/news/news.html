@@ -25,12 +25,12 @@
           {% for news in News.all %}
           <br>
           <div class = "row">
-            <div class="jumbotron" style = "background:white;">
-              <h4><a href = "{%url 'news:detail' news.id %}">{{news.title}}</a></h4>
+            <div class= "container" style = "border-style:solid;border-width:1px; border-radius:7px; border-color:grey;">
+              <br>
+              <h4><a href = "{%url 'news:detail' news.id %}" style = "color:#169EB7;">{{news.title}}</a></h4>
                 <p class="">&nbsp;&nbsp;-{{news.month}}&nbsp;{{news.date}},&nbsp;{{news.year}}&nbsp;</p>
             </div>
           </div>
-          <hr>
           {%endfor%}
           </div>
       </div>

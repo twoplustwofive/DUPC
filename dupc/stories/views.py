@@ -18,20 +18,16 @@ def stories(request):
 @login_required(login_url = "/account")
 def add(request):
     if request.method == 'POST':
-        if request.POST['title'] and request.POST['name'] and request.POST['url']:
+        if request.POST['title'] and request.POST['name'] and request.POST['url'] and request.POST['body']:
             sr = Story()
-            try:
-                fm = request.FILES['fl']
-            except MultiValueDictKeyError:
-                return render(request,'stories/create.html',{'error_message':'All fields are required.'})
-            
             sr.title = request.POST['title']
             sr.name = request.POST['name']
-            sr.url = request.POST['title']
-            sr.image = request.FILES['fl']
+            sr.url = request.POST['url']
+            sr.body = request.POST['body']
             sr.save()
             return redirect('stories:stories')
         else:
             return render(request,'stories/create.html',{'error_message':'All fields are required.'})
     else:
         return render(request,'stories/create.html')
+
