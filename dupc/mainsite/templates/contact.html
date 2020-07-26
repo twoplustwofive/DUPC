@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html' %}
 
 {% block ccd %}
@@ -11,7 +13,7 @@
       
       <!-- Container -->
       
-      <div class="container">
+      <div class="container" style="font-family: Raleway;">
             <div class="page-heading style3 wrapper border-bottom ">
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
@@ -333,9 +335,9 @@ $('#info').readmore({
   moreLink: '<a href="#">Usage, examples, and options</a>',
   collapsedHeight: 384,
   afterToggle: function(trigger, element, expanded) {
-	if(! expanded) { // The "Close" link was clicked
-	  $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
-	}
+    if(! expanded) { // The "Close" link was clicked
+      $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+    }
   }
 });
 
@@ -343,3 +345,4 @@ $('article').readmore({speed: 500});
 </script>
 
 <!-- Mirrored from marine.arenaofthemes.com/index-creative-light.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 May 2015 21:07:18 GMT -->
+
