@@ -25,7 +25,7 @@ def add(request):
     if request.method == 'POST':
         
         
-        if request.POST['name'] and request.POST['designation'] and request.POST['body']:
+        if request.POST['name'] and request.POST['designation'] and request.POST['body'] and request.POST['institute_name'] and request.POST['department']:
             try:
                 fm = request.FILES['img']
             except MultiValueDictKeyError:
@@ -36,6 +36,8 @@ def add(request):
             tm.designation = request.POST['designation']
             tm.information = request.POST['body']
             tm.image = request.FILES['img']
+            tm.institute_name = request.POST['institute_name']
+            tm.department = request.POST['department']
             tm.save()
             return redirect('mainsite:teams')
         else:
