@@ -1,3 +1,5 @@
+
+
 {% extends 'base.html' %}
 
 {% block ccd %}
@@ -10,10 +12,10 @@
       <div class="container">
           <div class="row justify-content-start" style="font-size: 120%; font-family: Raleway;">
             <div class="col-lg-3 col-md-3 col-sm-3">
-              <p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
-                <a href="#" style="color: #000;">Background</a><br><br>
-                <a href="#" style="color: #000;">Activities</a><br><br>
-                <a href="#" style="color: #000;">Team</a>
+              <p style="font-weight:bold; color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
+                <a href="{%url 'mainsite:background' %}" style="color: #000;">Background</a><br><br>
+                <a href="{%url 'mainsite:activity'%}" style="color: #000;">Activities</a><br><br>
+                <a href="{%url 'mainsite:teams'%}" style="color: #000;">Team</a>
               </p>
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7">
@@ -21,25 +23,30 @@
                 <h2 style="color: #169EB7; font-weight: 400;">TEAM</h2>
               </div>
               <br>
-                <img class=" img-fluid" src="/static/images/anamika.JPG" alt="card image" width = "30%" height = "40%" style="border: 3px solid #169EB7; border-radius: 5px; display: inline;">
+                <img class=" img-fluid" src="/static/images/IMG-1.jpg" alt="card image" width = "30%" height = "40%" style="display: inline;">
                 <p style="display: inline-block; padding-top: 12px; font-size: 90%; padding-left: 10px; font-weight: bold;">
                   <b style="color: #169EB7;">Dr. Anamika Baruah</b><br>
                   Associate Professor<br>
                   Dept. of Humanities and Social Sciences<br>
                   Indian Institute of Technology Guwahati (IITG)
                 </p>
-                <br><br>
+                <br><br><br><br>
                 {% for member in tm.all %}
-                  <img class=" img-fluid" src="{{member.image.url}}" alt="card image" width = "30%" height = "40%" style="border: 3px solid #169EB7; border-radius: 5px;">
-                  <p style="display: inline-block; padding-top: 12px; font-size: 90%; padding-left: 10px; font-weight: bold;">
-                  <b style="color: #169EB7;">{{member.name}}</b><br>
-                  {{member.designation}}<br>
-                 
+                <div>
+                  <img class=" img-fluid" src="{{member.image.url}}" width = "30%" height = "40%" style="top: 0; vertical-align: top;">
+                  <p style="display: inline-block; font-size: 90%; padding-top: 5px; font-weight: bold; padding-left: 10px;">
+
+                  <b style="color: #169EB7; margin-top: 20px;">{{member.name}}</b><br>
+                  {{ member.designation }}<br>
+                  {{ member.department }}<br>
+                  {{ member.institute_name }}
                   <br>
                   {% if user.is_authenticated %}
                    <a class="btn btn-dark" href="{%url 'mainsite:detail' member.id%}remove" role="button">Remove</a>
                   {%endif%}
                 </p>
+              </div>
+                <br><br><br>
                 {% endfor %}
             </div>
           </div>
@@ -343,9 +350,9 @@ $('#info').readmore({
   moreLink: '<a href="#">Usage, examples, and options</a>',
   collapsedHeight: 384,
   afterToggle: function(trigger, element, expanded) {
-	if(! expanded) { // The "Close" link was clicked
-	  $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
-	}
+  if(! expanded) { // The "Close" link was clicked
+    $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+  }
   }
 });
 

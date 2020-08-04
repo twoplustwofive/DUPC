@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block ccd %}
 
   
@@ -15,16 +15,18 @@
           <div class="row justify-content-start" style="font-size: 120%; font-family: Raleway;">
             <div class="col-lg-3 col-md-3 col-sm-3">
               <p style="font-weight:bold; color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
-                <a href="#" style="color: #000;">Background</a><br><br>
-                <a href="#" style="color: #000;">Activities</a><br><br>
-                <a href="#" style="color: #000;">Team</a>
+                <a href="{%url 'mainsite:background' %}" style="color: #000;">Background</a><br><br>
+                <a href="{%url 'mainsite:activity'%}" style="color: #000;">Activities</a><br><br>
+                <a href="{%url 'mainsite:teams'%}" style="color: #000;">Team</a>
               </p>
             </div>
             <div class="col-lg-7 col-md-7 col-sm-7">
               <div class="page-heading">
                 <h2 style="color: #169EB7; font-weight: 400;">BACKGROUND</h2>
               </div>
-              <br>
+              
+              <img src="{% static 'images/bg.jpg' %}" width="100%">
+              <br><br>
               <p>
                 The Project Lead (Anamika Barua) and two other team members (Sumit Vij and Arundhati Deka) have been associated with the initiative <b>"Transnational Policy Dialogue for Improved Water Governance of Brahmaputra River"</b> (Brahmaputra Dialogue or BD initiative).
               </p>
@@ -361,9 +363,9 @@ $('#info').readmore({
   moreLink: '<a href="#">Usage, examples, and options</a>',
   collapsedHeight: 384,
   afterToggle: function(trigger, element, expanded) {
-	if(! expanded) { // The "Close" link was clicked
-	  $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
-	}
+  if(! expanded) { // The "Close" link was clicked
+    $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+  }
   }
 });
 
