@@ -40,7 +40,7 @@
                   {{ member.designation }}<br>
                   {{ member.department }}<br>
                   {{ member.institute_name }}
-                  <br>
+                  <br><br>
                   {% if user.is_authenticated %}
                    <a class="btn btn-dark" href="{%url 'mainsite:detail' member.id%}remove" role="button">Remove</a>
                   {%endif%}
