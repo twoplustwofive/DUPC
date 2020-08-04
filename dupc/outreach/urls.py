@@ -7,6 +7,7 @@ app_name = 'outreach'
 
 urlpatterns = [
     path('',views.outreach,name = 'outreach'),
-    path('add/',views.addpod,name = 'addpod'),
+    path('addp/',views.addpod,name = 'addpod'),
+    path('addm/',views.addmedia,name = 'addmedia'),
     
 ]

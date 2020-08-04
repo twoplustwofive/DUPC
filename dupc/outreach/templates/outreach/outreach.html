@@ -1,68 +1,53 @@
 {% extends 'base.html' %}
 
 {% block ccd %}
-
-	<div id="marine-content-inner">
-		<section id="main-content">
-			<div class="container">
-				<div class="page-heading style3 wrapper border-bottom">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<br><h3>Podcasts</h3>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							{% if user.is_authenticated %}
-                          <br>
-                           <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'outreach:addpod'%}" role="button">Add Podcast</a></span></h4>
-                          {%endif%}
-						</div>
-					</div>
-				</div>
-				<div class="container"><br>
-			<main role="main">
-            
-            {% for podcast in pc.all%}
-              
-                <div class = "container" style = "border-style:solid; border-radius:5px; border-width:0.5px;">
-                <br>
-                <h2 style="font-family: 'Raleway'; color:#169EB7;font-size: 150%; font-weight: bolder;">{{podcast.title}}</h2>
-                <p>&nbsp;&nbsp;-{{podcast.month}}&nbsp;{{podcast.date}},&nbsp;{{podcast.year}}&nbsp;</p>
-                <p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;">{{podcast.body}}</p>
-                <p><a class="btn btn-secondary" href="{{podcast.url}}" target="_blank" role="button">View details &raquo;</a></p>
-                </div><br>
-            
-              {%endfor%}
-            
-          </main>
-        </div>
-				</div>
+<br><br>
+<div class = "container">
+	<div class = "row">
+		<div class = "col-6">
+			<div style = "text-align:center;">
+			<img src="/static/images/podcasts.png" alt="" class="img-thumbnail" style = "width:100px; height = 100px; text-align:center;"></div><br>
+			<h2 style="font-family: 'Raleway'; color:#169EB7;font-weight:bold;text-align:center;font-size:150%;"><b>PODCASTS</b></h2><br><br>
+			{% for podcast in pc.all%}
+			<div class = "container"><a href = "{{podcast.url}}" target = "_blank" style  = "color:black; text-decoration: none;">
+			<div style = "text-align:center;">
+				<img src="{{podcast.image.url}}" alt="" class="img-fluid" style = "width:300px; height = 300px; text-align:center;"><br><br>
+				<h2 style="font-family: 'Raleway'; color:#169EB7;font-weight:bold;font-size:125%;text-align:center;"><b>{{podcast.title}}</b></h2>
+				<div class = "container"style = "width:350px;"><p style="font-family: 'Raleway'; font-size:100%;text-align:justify;"><b>{{podcast.body}}</b></p><br></div>
 			</div>
-		</section>
-	</div>
+			</a></div>
 
+			{%endfor%}
+
+
+
+		</div>
+		<div class = "col-6">
+			<div style = "text-align:center;">
+			<img src="/static/images/Media.png" alt="" class="img-thumbnail" style = "width:100px; height = 100px; text-align:center;"></div><br>
+			<h2 style="font-family: 'Raleway'; color:#169EB7;font-weight:bold;text-align:center;font-size:150%;"><b>MEDIA</b></h2><br><br>
+
+				{% for media in md.all%}
+				<div class = "container"><a href = "{{media.url}}" target = "_blank" style  = "color:black; text-decoration: none;">
+			<div style = "text-align:center;">
+				<img src="{{media.image.url}}" alt="" class="img-fluid" style = "width:300px; height = 300px; text-align:center;"><br><br>
+				<h2 style="font-family: 'Raleway'; color:#169EB7;font-weight:bold;font-size:125%;"><b>{{media.title}}</b></h2>
+				<div class = "container"style = "width:350px;"><p style="font-family: 'Raleway'; font-size:100%;text-align:justify;"><b>{{media.body}}</b></p><br></div>
+			</div>
+			</a></div>
+
+			{%endfor%}
+		</div>
+	</div>
+</div>
+
+
+ {% if user.is_authenticated %}
+          <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'outreach:addpod'%}" role="button">Add Podcast</a></span></h4>
+		   <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'outreach:addmedia'%}" role="button">Add Media</a></span></h4>
+{%endif%}
+
+
+	
 {% endblock %}
 
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery-ui.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.mousewheel.min.js"></script> 
-<script type="text/javascript" src="assets/js/SmoothScroll.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.prettyPhoto.js"></script> 
-<script type="text/javascript" src="assets/js/modernizr.js"></script> 
-<script type="text/javascript" src="assets/js/wow.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.sharre.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.flexslider-min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.knob.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.mixitup.min.js"></script> 
-<script type="text/javascript" src="assets/js/masonry.min0226.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.masonry.min0226.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.fitvids.js"></script> 
-<script type="text/javascript" src="assets/js/perfect-scrollbar-0.4.10.with-mousewheel.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.nouislider.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.validity.min.js"></script> 
-<script type="text/javascript" src="assets/js/tweetie.min.js"></script> 
-<script type="text/javascript" src="assets/js/script.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.themepunch.enablelog.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script> 
-<script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script> 
