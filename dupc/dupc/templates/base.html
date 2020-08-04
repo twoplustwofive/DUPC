@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" style="overflow-x: hidden; ">
 {%load static %}
@@ -69,15 +71,8 @@
      <li class="nav-item pill">
        <a class="nav-link" href="{%url 'mainsite:homepage'%}">Home <span class="sr-only">(current)</span></a>
      </li>
-      <li class="nav-item dropdown pill">
-       <a class="nav-link " href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         About
-       </a>
-       <div class="dropdown-menu" style="font-size: 90%;font-family: 'Raleways'" aria-labelledby="navbarDropdown">
-         <a class="dropdown-item nav-link" href="{%url 'mainsite:background' %}">Background</a>
-         <a class="dropdown-item nav-link" href="{%url 'mainsite:activity'%}">Activities</a>
-         <a class="dropdown-item nav-link" href="{%url 'mainsite:teams'%}">Team</a>
-       </div>
+      <li class="nav-item pill">
+       <a class="nav-link " href="{%url 'mainsite:background' %}">About</a>
      </li>
      <li class="nav-item pill">
        <a class="nav-link" href="{%url 'outreach:outreach'%}">Outreach</a>
@@ -85,8 +80,8 @@
      <li class="nav-item pill">
        <a class="nav-link" href="{%url 'news:news'%}">News and Updates</a>
      </li>
-     <li class="nav-item dropdown pill">
-       <a class="nav-link" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+     <li class="nav-item pill">
+       <a class="nav-link" href="{% url 'publication:publication' %}">Resources</a>
        <div class="dropdown-menu" style="font-size: 90%;font-family: 'Raleways'" aria-labelledby="navbarDropdown">
          <a class="dropdown-item nav-link" href="{% url 'publication:publication' %}">Publication</a>
          <a class="dropdown-item nav-link" href="{% url 'reports:reports' %}">Project Reports</a>
