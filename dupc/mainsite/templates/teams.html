@@ -23,14 +23,7 @@
                 <h2 style="color: #169EB7; font-weight: 400;">TEAM</h2>
               </div>
               <br>
-                <img class=" img-fluid" src="/static/images/IMG-1.jpg" alt="card image" width = "30%" height = "40%" style="display: inline;">
-                <p style="display: inline-block; padding-top: 12px; font-size: 90%; padding-left: 10px; font-weight: bold;">
-                  <b style="color: #169EB7;">Dr. Anamika Baruah</b><br>
-                  Associate Professor<br>
-                  Dept. of Humanities and Social Sciences<br>
-                  Indian Institute of Technology Guwahati (IITG)
-                </p>
-                <br><br><br><br>
+                             
                 {% for member in tm.all %}
                 <div>
                   <img class=" img-fluid" src="{{member.image.url}}" width = "30%" height = "40%" style="top: 0; vertical-align: top;">
