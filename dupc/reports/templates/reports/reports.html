@@ -7,48 +7,56 @@
     
     <!-- Main Content -->
     
-    <section id="main-content"> 
+  <section id="main-content"> 
       
       <!-- Container -->
       <br><br>
       <div class="container">
           <div class="row justify-content-start" style="font-size: 120%; font-family: Raleway;">
-            <div class="col-lg-3 col-md-3 col-sm-3">
-              	<p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
-                <a href="{%url 'publication:publication' %}" style="color: #000;">Publications</a><br><br>
-                <a href="{%url 'reports:reports'%}" style="color: #000;">Reports</a><br><br>
-                <a href="{%url 'stories:stories'%}" style="color: #000;">Multimedia Stories</a>
-              	</p>
-            </div>
-
-            <div class="col-lg-7 col-md-7 col-sm-7">
-              	<div class="page-heading">
-                	<h2 style="color: #169EB7; font-weight: 400;">Reports</h2>
+            	<div class="col-lg-3 col-md-3 col-sm-3">
+              		<p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
+                	<a href="{%url 'publication:publication' %}" style="color: #000;">Publications</a><br><br>
+                	<a href="{%url 'reports:reports'%}" style="color: #000;">Reports</a><br><br>
+                	<a href="{%url 'stories:stories'%}" style="color: #000;">Multimedia Stories</a>
+              		</p>
             	</div>
-            </div>
+
+            	<div class="col-lg-7 col-md-7 col-sm-7">
+              		<div class="page-heading">
+                		<h2 style="color: #169EB7; font-weight: 400;">Publications</h2><br>
+            		  </div>
+                  <div class = "row justify-content-between">
+                  {%for report in rp.all%}
+                  <div class = "col-12" style = "border-style:solid;">
+
+                  <br><h4 style="color: #169EB7; font-weight: 400;">{{report.title}}</h4>
+                  <p style="font-family: 'Raleway'; font-size:100%;text-align:justify;">{{report.month}}&nbsp;{{report.date}},{{report.year}}<br><span style = "color:#169EB7;"><b>{{report.name}}</b><br><br></span><span style = "color:#169EB7;"><a href = "{{report.file.url}}" target = "_blank" style  = "color:#169EB7; text-decoration: none;">View Report</a></span></p><br><br>
+                  </div>&emsp;
+                  {%endfor%}
+                  </div>
+
+
+
+
+                </div>
           </div>
         </div>
-      
-      
+	  </section>
+</div>
 
-     
-      
-    </section>
 
-    
-    <!-- /Main Content -->
-    
-    <section id="main-content"> </section>
-  </div>
-  
-  <!-- /Marine Conten Inner --> 
-  
-  <!-- Lower Footer -->
-  
-  
-  
-  <!-- /Lower Footer --> 
-  
+<div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <br>
+            {% if user.is_authenticated %}
+          <h4 class="breadcrumbs" align = "center"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'reports:add'%}" role="button">Add Report</a></span></h4>
+            {%endif%}
+        </div>
+      </div>
+        
+        
 </div>
 <br>
 {%endblock%}

@@ -18,7 +18,7 @@ def add(request):
     if request.method == 'POST':
         
         
-        if request.POST['title'] and request.POST['date'] and request.POST['date'] and request.POST['month'] and request.POST['year']:
+        if request.POST['title'] and request.POST['date'] and request.POST['date'] and request.POST['month'] and request.POST['year'] and request.POST['author']:
             try:
                 fm = request.FILES['fl']
             except MultiValueDictKeyError:
@@ -28,6 +28,7 @@ def add(request):
             rp.title = request.POST['title']
             rp.date = request.POST['date']
             rp.month = request.POST['month']
+            rp.name = request.POST['author']
             rp.year = request.POST['year']
             rp.file = request.FILES['fl']
             rp.save()

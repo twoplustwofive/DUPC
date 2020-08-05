@@ -14,7 +14,7 @@ def publicationss(request):
 @login_required(login_url = "/account")
 def addpublication(request):
 	if request.method == 'POST':
-		if request.POST['author'] and request.POST['title'] and request.POST['name'] and request.POST['url']:
+		if request.POST['author'] and request.POST['title'] and request.POST['name'] and request.POST['url'] and request.POST['body']:
 			pub = publication()
 			if request.POST['gridRadios'] == "1":
 				try:
@@ -31,6 +31,7 @@ def addpublication(request):
 			pub.authors = request.POST['author']
 			pub.title = request.POST['title']
 			pub.name = request.POST['name']
+			pub.body = request.POST['body']
 			pub.link = request.POST['url']
 			pub.save()
 			return redirect('publication:publication')
