@@ -1,56 +1,41 @@
-
-
 {% extends 'base.html' %}
 
 {% block ccd %}
 
-	<div id="marine-content-inner">
-		<section id="main-content">
+  
+<div id="marine-content-inner"> 
+    
+    <!-- Main Content -->
+    
+    <section id="main-content"> 
+      
+      <!-- Container -->
+      <br><br>
+      <div class="container">
+          <div class="row justify-content-start" style="font-size: 120%; font-family: Raleway;">
+            	<div class="col-lg-3 col-md-3 col-sm-3">
+              		<p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
+                	<a href="{%url 'publication:publication' %}" style="color: #000;">Publications</a><br><br>
+                	<a href="{%url 'reports:reports'%}" style="color: #000;">Reports</a><br><br>
+                	<a href="{%url 'stories:stories'%}" style="color: #000;">Multimedia Stories</a>
+              		</p>
+            	</div>
 
-			
-			<div class="container">
-				<div class="page-heading style3 wrapper border-bottom">
-					<div class="row">
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							<br><h3>Publications</h3>
-						</div>
-						<div class="col-lg-6 col-md-6 col-sm-6">
-							{% if user.is_authenticated %}
-                          <br>
-                           <h4 class="breadcrumbs" align = "right"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'publication:add'%}" role="button">Add Publications</a></span></h4>
-                          {%endif%}
-						</div>
-					</div>
+            	<div class="col-lg-7 col-md-7 col-sm-7">
+              		<div class="page-heading">
+                		<h2 style="color: #169EB7; font-weight: 400;">Publications</h2>
+            		</div>
 				</div>
-				<div class="container">
-					<main role="main">
-					{% for publication in Publication.all %}
-					<br>
 
-					<div class="container" style = "border-style:solid; border-radius:5px; border-width:0.5px;" >
-						<br>
-						<h2 style="font-family: 'Raleway'; color:#169EB7;font-size: 150%; font-weight: bolder;">{{publication.title}}</h2>
-						<p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;"><b>Authors:</b></b>&nbsp;&nbsp;{{publication.authors}}</p>
-						<p class = "lead"style="font-family: 'Raleway'; color:black;font-size: 120%; font-weight: bolder; text-align:justify;"><b><b>Book/Journal Name:</b></b>&nbsp;&nbsp;{{publication.name}}</p>
-						<p class="lead">
-						  <p><a class="btn btn-secondary" href="{{publication.link}}" target="_blank" role="button">Learn More &raquo;</a></p>
-						</p>
-						{% if publication.has_pdf == True %}
-						<p class="lead">
-							<p><a class="btn btn-secondary" href="{{publication.pdf.url}}" target="_blank" role="button">Read More &raquo;</a></p>
-						  </p>
-						  {%endif%}
-						
-					  </div>
-        			
-					{%endfor%}
-					</main>
-				</div>
-			</div>
-		</section>
-	</div>
+    	</div>
+	</section>
+</div>
+<br>
+{%endblock%}
 
-{% endblock %}
+<!-- /Marine Content Wrapper --> 
+
+<!-- JavaScript --> 
 
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script> 
 <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script> 
@@ -76,3 +61,264 @@
 <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.js"></script> 
 <script type="text/javascript" src="assets/js/jquery.themepunch.revolution.min.js"></script> 
 <script type="text/javascript" src="assets/js/jquery.themepunch.tools.min.js"></script> 
+<script type="text/javascript">
+
+
+
+jQuery(document).ready(function() {
+
+
+
+    jQuery('.tp-banner').show().revolution(
+
+
+
+    {
+
+
+
+        dottedOverlay:"none",
+
+
+
+        delay:16000,
+
+
+
+        startwidth:1170,
+
+
+
+        startheight:700,
+
+
+
+        hideThumbs:200,
+
+
+
+        thumbWidth:100,
+
+
+
+        thumbHeight:50,
+
+
+
+        thumbAmount:5,
+
+
+
+        navigationType:"bullet",
+
+
+
+        navigationArrows:"solo",
+
+
+
+        navigationStyle:"preview2",
+
+
+
+        touchenabled:"on",
+
+
+
+        onHoverStop:"on",
+
+
+
+        swipe_velocity: 0.7,
+
+
+
+        swipe_min_touches: 1,
+
+
+
+        swipe_max_touches: 1,
+
+
+
+        drag_block_vertical: false,
+
+
+
+                                parallax:"mouse",
+
+
+
+        parallaxBgFreeze:"on",
+
+
+
+        parallaxLevels:[7,4,3,2,5,4,3,2,1,0],
+
+
+
+        keyboardNavigation:"off",
+
+
+
+        navigationHAlign:"center",
+
+
+
+        navigationVAlign:"bottom",
+
+
+
+        navigationHOffset:0,
+
+
+
+        navigationVOffset:20,
+
+
+
+        soloArrowLeftHalign:"left",
+
+
+
+        soloArrowLeftValign:"center",
+
+
+
+        soloArrowLeftHOffset:20,
+
+
+
+        soloArrowLeftVOffset:0,
+
+
+
+        soloArrowRightHalign:"right",
+
+
+
+        soloArrowRightValign:"center",
+
+
+
+        soloArrowRightHOffset:20,
+
+
+
+        soloArrowRightVOffset:0,
+
+
+
+        shadow:0,
+
+
+
+        fullWidth:"on",
+
+
+
+        fullScreen:"off",
+
+
+
+        spinner:"spinner4",
+
+
+
+        stopLoop:"off",
+
+
+
+        stopAfterLoops:-1,
+
+
+
+        stopAtSlide:-1,
+
+
+
+        shuffle:"off",
+
+
+
+        autoHeight:"off",                       
+
+
+
+        forceFullWidth:"off",                       
+
+
+
+        hideThumbsOnMobile:"off",
+
+
+
+        hideNavDelayOnMobile:1500,                      
+
+
+
+        hideBulletsOnMobile:"off",
+
+
+
+        hideArrowsOnMobile:"off",
+
+
+
+        hideThumbsUnderResolution:0,
+
+
+
+        hideSliderAtLimit:0,
+
+
+
+        hideCaptionAtLimit:0,
+
+
+
+        hideAllCaptionAtLilmit:0,
+
+
+
+        startWithSlide:0,
+
+
+
+        videoJsPath:"rs-plugin/videojs/",
+
+
+
+        fullScreenOffsetContainer: ""   
+
+
+
+    });
+
+
+
+}); //ready
+
+
+
+</script> 
+
+
+
+<script src="assets/js/readmore.js"></script>
+
+<script>
+$('#info').readmore({
+  moreLink: '<a href="#">Usage, examples, and options</a>',
+  collapsedHeight: 384,
+  afterToggle: function(trigger, element, expanded) {
+    if(! expanded) { // The "Close" link was clicked
+      $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+    }
+  }
+});
+
+$('article').readmore({speed: 500});
+</script>
+
+<!-- Mirrored from marine.arenaofthemes.com/index-creative-light.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 11 May 2015 21:07:18 GMT -->
