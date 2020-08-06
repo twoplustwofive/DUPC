@@ -4,39 +4,63 @@
 
   
 <div id="marine-content-inner"> 
-  
   <section id="main-content"> 
-      <div class="container">
-        <div class="page-heading style3 wrapper border-bottom ">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6">
-                      <br><h3>News and Updates</h3>
-                    </div>
-                </div>
-
+    <div class="container">
+        <br>
+        <div class="row justify-content-end" style="font-size: 100%;font-weight:bold; font-family: Raleway;">
+          <div class = "col-9">
+            <h3 style="color: #169EB7; font-weight: bold;font-family: Raleway;">{{ns.title}}</h3>
+            <p style="font-weight:100;font-family: Raleway;font-size:120%;">{{ns.body}}<br>{%if ns.has_url == True%}<a href = "{{ns.url}}" target = "_blank" style = "text-decoration:none"><span style="color: #169EB7;">Link of The News</span></a><br>{%endif%}{%if ns.has_file == True%}<a href = "{{ns.file.url}}" target = "_blank" style = "text-decoration:none"><span style="color: #169EB7;">Download</span></a>{%endif%}</p>
+            
+          
           </div>
-          <div class = "container">
-          <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <br>
-                <h5 align="justify" style="font-family:verdana" ><b style="color:blue;font-family: 'Times New Roman', Times, serif;font-size: larger;">{{ns.title}}:-</b></h5>
-                <p style="font-family:'Courier New'">{{ns.body}}<br></p>
-                {% if ns.has_url == True %}
-                <a class="btn btn-success" href="{{ns.url}}" role="button" target = "_blank">News Link</a><br><br>{%endif%}
-                {% if ns.has_file == True %}
-                <a class="btn btn-success" href="{{ns.file.url}}" role="button" target = "_blank">Download Pdf</a>{%endif%}
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                  <a href = "{%url 'news:nss' ns.year ns.month %}" style = "color:#169EB7; text-decoration: none;">Go Back</a><br><br>
+              	<p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
+                <a href="{%url 'news:nss' 2020 'August'%}" style="color: #000;">Aug 2020</a><br><br>
+                <a href="{%url 'news:nss' 2020 'September'%}" style="color: #000;">Sept 2020</a><br><br>
+                <a href="{%url 'news:nss' 2020 'October'%}" style="color: #000;">Oct 2020</a><br><br>
+                <a href="{%url 'news:nss' 2020 'November'%}" style="color: #000;">Nov 2020</a><br><br>
+                <a href="{%url 'news:nss' 2020 'December'%}" style="color: #000;">Dec 2020</a><br><br>
+                <a href="{%url 'news:nss' 2021 'January'%}" style="color: #000;">Jan 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'Febuary'%}" style="color: #000;">Feb 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'March'%}" style="color: #000;">Mar 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'April'%}" style="color: #000;">Apr 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'May'%}" style="color: #000;">May 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'June'%}" style="color: #000;">Jun 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'July'%}" style="color: #000;">Jul 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'August'%}" style="color: #000;">Aug 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'September'%}" style="color: #000;">Sept 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'October'%}" style="color: #000;">Oct 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'November'%}" style="color: #000;">Nov 2021</a><br><br>
+                <a href="{%url 'news:nss' 2021 'December'%}" style="color: #000;">Dec 2021</a><br><br>
+                <a href="{%url 'news:nss' 2022 'January'%}" style="color: #000;">Jan 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'February'%}" style="color: #000;">Feb 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'March'%}" style="color: #000;">Mar 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'April'%}" style="color: #000;">Apr 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'May'%}" style="color: #000;">May 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'June'%}" style="color: #000;">Jun 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'July'%}" style="color: #000;">Jul 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'August'%}" style="color: #000;">Aug 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'September'%}" style="color: #000;">Sept 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'October'%}" style="color: #000;">Oct 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'November'%}" style="color: #000;">Nov 2022</a><br><br>
+                <a href="{%url 'news:nss' 2022 'December'%}" style="color: #000;">Dec 2022</a><br><br>
+                <a href="{%url 'news:nss' 2023 'January'%}" style="color: #000;">Jan 2023</a><br><br>
+                <a href="{%url 'news:nss' 2023 'February'%}" style="color: #000;">Feb 2023</a><br><br>
+                <a href="{%url 'news:nss' 2023 'March'%}" style="color: #000;">Mar 2023</a><br><br>
+                <a href="{%url 'news:nss' 2023 'April'%}" style="color: #000;">Apr 2023</a><br><br>
+                <a href="{%url 'news:nss' 2023 'May'%}" style="color: #000;">May 2023</a><br><br>
+                <a href="{%url 'news:nss' 2023 'June'%}" style="color: #000;">Jun 2023</a><br><br>
+                <a href="{%url 'news:nss' 2023 'July'%}" style="color: #000;">Jul 2023</a><br><br>
 
-                
-              </div>
-            </div>
+              	</p>
+            	</div>
           </div>
-      </div>
+    </div>  
     </section>
-  </div>
-  
- 
-  
-</div>
+ </div>
+            	
 <br>
 {%endblock%}
 
@@ -319,9 +343,9 @@ $('#info').readmore({
   moreLink: '<a href="#">Usage, examples, and options</a>',
   collapsedHeight: 384,
   afterToggle: function(trigger, element, expanded) {
-	if(! expanded) { // The "Close" link was clicked
-	  $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
-	}
+    if(! expanded) { // The "Close" link was clicked
+      $('html, body').animate({scrollTop: element.offset().top}, {duration: 100});
+    }
   }
 });
 

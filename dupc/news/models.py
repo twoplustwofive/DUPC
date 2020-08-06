@@ -11,3 +11,7 @@ class news(models.Model):
     file = models.FileField(upload_to ='files/')
     has_url = models.BooleanField(default = True)
     has_file = models.BooleanField(default = True)
+
+    def summary(self):
+        return self.body[:250]
+    

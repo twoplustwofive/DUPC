@@ -11,8 +11,19 @@ from django.utils.datastructures import MultiValueDictKeyError
 
 # Create your views here.
 def newss(request):
+   
     News = news.objects
+    
     return render(request,'news/news.html',{'News':News})
+
+
+def nss(request,year,month):
+   
+    Ns = news.objects.filter(year = year)
+    News = Ns.filter(month = month)
+    
+    return render(request,'news/news_display.html',{'News':News})
+
 
 
 
@@ -48,7 +59,7 @@ def addnews(request):
             ns.month = request.POST['month']
             ns.year = request.POST['year']
             ns.save()
-            return redirect('news:news')
+            return redirect('news:newss')
         else:
             return render(request, 'news/create.html',{'error_message':'All fields are required.'})
     else:
@@ -57,5 +68,7 @@ def addnews(request):
 
 def detail(request,pk_id):
     ns = get_object_or_404(news,id = pk_id)
+
+    
 
     return render(request,'news/detail.html',{'ns':ns})

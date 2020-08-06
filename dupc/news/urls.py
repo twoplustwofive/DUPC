@@ -7,6 +7,7 @@ app_name = 'news'
 
 urlpatterns = [
     path('',views.newss,name = 'news'),
+    path('<int:year>/<str:month>/',views.nss,name = 'nss'),
     path('add/',views.addnews,name = 'add'),
     path('<int:pk_id>/', views.detail, name = 'detail'),
 ]
