@@ -12,4 +12,7 @@ class team(models.Model):
     
     def __str__(self):
         return self.name
+
+    def ida(self):
+        return self.name[:2]
     
