@@ -10,7 +10,7 @@ from .models import Story
 
 # Create your views here.
 def stories(request):
-    st = Story.objects
+    st = Story.objects.filter().order_by('-id')
 
     return render(request,'stories/stories.html',{'st':st})
 

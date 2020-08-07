@@ -9,7 +9,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 from .models import Report
 
 def reports(request):
-    rp = Report.objects
+    rp = Report.objects.filter().order_by('-id')
 
     return render(request,'reports/reports.html',{'rp':rp})
 

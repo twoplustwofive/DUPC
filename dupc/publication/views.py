@@ -8,7 +8,7 @@ from .models import *
 
 # Create your views here.
 def publicationss(request):
-	Publication = publication.objects
+	Publication = publication.objects.filter().order_by('-id')
 	return render(request, 'publication/publication.html',{'Publication':Publication})
 
 @login_required(login_url = "/account")

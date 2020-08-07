@@ -9,8 +9,8 @@ from .models import podcast,media
 
 
 def outreach(request):
-    pc = podcast.objects
-    md = media.objects
+    pc = podcast.objects.filter().order_by('-id')
+    md = media.objects.filter().order_by('-id')
     return render(request,'outreach/outreach.html',{'pc':pc,'md':md})
 
 
