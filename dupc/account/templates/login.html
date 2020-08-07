@@ -38,8 +38,9 @@
      <button type="submit" class="btn btn-success">Login</button>
      </div>
      </form>
+     {# Assumes you setup the password_reset view in your URLconf #}
+      <a href="{% url 'password_reset' %}">Forgot Password</a>
      <br>
-    
 </div>
    
 {% endblock ccd %}
