@@ -12,5 +12,6 @@ urlpatterns = [
     path('logout/',views.Logout,name='logoutpage'),
     
     
+    
 ]+  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
