@@ -13,18 +13,48 @@
       <br><br>
       <div class="container">
           <div class="row justify-content-start" style="font-size: 120%; font-family: Raleway;">
-            <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="col-lg-2 col-md-2 col-sm-2">
               	<p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
                 <a href="{%url 'publication:publication' %}" style="color: #000;">Publications</a><br><br>
                 <a href="{%url 'reports:reports'%}" style="color: #000;">Reports</a><br><br>
                 <a href="{%url 'stories:stories'%}" style="color: #000;">Multimedia Stories</a>
               	</p>
             </div>
-
-            <div class="col-lg-7 col-md-7 col-sm-7">
+            
+            <div class="col-9">
               	<div class="page-heading">
-                	<h2 style="color: #169EB7; font-weight: 400;">Mulimedia Stories</h2>
+                	<h2 style="color: #169EB7; font-weight: 400;">Mulimedia Stories</h2><br><br>
             	</div>
+                
+              {%for story in st.all %}
+                  <div  class = "col-12" style = "border-style:solid;">
+                    <br>
+                    <h3 style="color: #169EB7; font-weight: 400;">{{story.title}}</h3>
+                    <p style="font-family: 'Raleway'; font-size:100%;text-align:justify;">By-{{story.name}}<br>{{story.body}}</p>
+                    <div class = "text-align:center;">
+                        &emsp; &emsp; &emsp; &emsp;&emsp; &emsp;&emsp; &emsp;&emsp;
+                        <iframe width="350" height="200"src="{{story.url}}"></iframe>
+                        
+                    </div><br>
+                      <br>
+                      </div><br>
+
+
+                      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6">
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+          <br>
+            {% if user.is_authenticated %}
+          <h4 class="breadcrumbs" align = "center"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'stories:add'%}" role="button">Add Publication</a></span></h4>
+            {%endif%}
+        </div>
+      </div>
+        
+        
+</div>
+                      
+                    {%endfor%}
 				
             </div>
           </div>

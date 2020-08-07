@@ -14,7 +14,7 @@ def loginpage(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                messages.info(request,"You are now logged in as {username}")
+                
                 return redirect('mainsite:homepage')
             else:
                return render(request,'login.html',{'error_message':'Invalid Password.'})
