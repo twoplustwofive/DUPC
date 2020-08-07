@@ -7,12 +7,19 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
 from .models import team
 from django.utils.datastructures import MultiValueDictKeyError
+from news.models import update
+from publication.models import publication
+from outreach.models import podcast
 
 # Create your views here.
 
 
 def homepage(request):
-    return render(request,'index1.html')
+    up = update.objects.filter().order_by('-id')[:3]
+    pb = publication.objects.filter().order_by('-id')[:3]
+    pod = podcast.objects.filter().order_by('-id')[:3]
+
+    return render(request,'index1.html',{'up':up,'pb':pb,'pod':pod })
 
 
 

@@ -18,7 +18,7 @@
               <div class = "container">
                 <h5 style="color: #169EB7; font-weight: bold;font-family: Raleway;">{{update.title}}</h5>
                 {%if update.has_image == True%}
-                  <img src="{{update.image.url}}" class="img-fluid" alt="Responsive image">
+                  <img src="{{update.image.url}}" class="img-fluid" alt="Responsive image" style = "">
                 {%endif%}
                     <p style = "font-size: 100%;font-family: Raleway;">{{update.month}}&nbsp;{{update.date}},{{update.year}}.<br><br>{{update.body}}&nbsp;{%if update.has_url == True %}<a href = "{{update.url}}" style  = "color:#169EB7; text-decoration: none;"><span style="color: #169EB7; font-weight: bold;"><b> Know More</b></span></a>{%endif%}<br>{%if update.has_file == True%}<a href = "{{update.file.url}}" style  = "color:#169EB7; text-decoration: none;"><span style="color: #169EB7; font-weight: bold;"><b> Download</b></span></a>{%endif%}</p>
                     <br><br>

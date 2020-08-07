@@ -21,30 +21,29 @@
           <div class="carousel-item active">
             <img class="d-block w-100" src="static/images/11.jpg" alt="First slide" style  = "width:500px; height:400px;"><br>
             <p style="float: right; color: #169EB7; font-size: 109%;">
-              &ensp;&ensp;&ensp;&ensp;<b style="font-weight: 600;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Origin</b><br>
-              'PICTURE CREDITS: Yarlung Zangbo'
+              &ensp;&ensp;&ensp;&ensp;<b style="font-weight: 600;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;The Origin- Yarlung Zambo</b><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Wen Ling
             </p>
           </div>
 
           <div class="carousel-item">
             <img class="d-block w-100" src="static/images/13.jpg" alt="Third slide" style  = "width:500px;height:400px;"><br>
             <p style="float: right; color: #169EB7; font-size: 109%;">
-              <b style="font-weight: 600; text-align:right;">&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;  The River as Respite.</b><br>
-              &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp; 'PICTURE CREDITS:Chandan Mahanta'
+              <b style="font-weight: 600; text-align:right;">&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;The River as Respite.</b><br>
+              &emsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;Chandan Mahanta
             </p>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="static/images/14.jpg" alt="Forth slide" style  = "width:500px;height:400px;"><br>
             <p style="float: right; color: #169EB7; font-size: 109%;">
               <b style="font-weight: 600;"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fishing is a common activity in the floodplains of India and Bangladesh.</b><br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;'PICTURE CREDITS:John Doe'
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Rupam Bhaduri
             </p>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="static/images/12.jpg" alt="Second slide" style  = "width:500px;height:400px;"><br>
             <p style="float: right; color: #169EB7; font-size: 109%;">
               <b style="font-weight: 600;">&emsp;&emsp;Porcupines and Sandbags as embankments in Majuli along the river. </b><br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'PICTURE CREDITS: Arundhati Deka'
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Arundhati Deka
             </p>
           </div>
           
@@ -53,7 +52,7 @@
             <img class="d-block w-100" src="static/images/5.jpg" alt="Fifth slide" style  = "width:500px;height:400px;"><br>
             <p style="float: right; color: #169EB7; font-size: 109%;">
               <b style="font-weight: 600;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Women drying clothes along the river Brahmaputra.</b><br>
-              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'PICTURE CREDITS:Chandan Mahanta'
+              &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Chandan Mahanta
             </p>
           </div>
         </div>
@@ -97,7 +96,23 @@
   </div>
 <br><br><br><br>
 <div class="container"> 
-  <div class="col-12">
+  <div class = "row">
+  <div class = "col-6" style = "border-style:solid; text-align:center;">
+    <br>
+    <h4 style="font-family: 'Raleway'; color:#169EB7; "><b><b>Recent Announcements</b></b></h4><br>
+    {%for update in up.all%}
+      <h5 style="font-family: 'Raleway';text-align:left;"><a href = "{%url 'news:news'%}">{{update.title}}&nbsp;</a></h5>
+    {%endfor%}
+    {%for publications in pb.all%}
+      <h5 style="font-family: 'Raleway';text-align:left;"><a href = "{%url 'publication:publication'%}">{{publication.title}}</a></h5>
+    {%endfor%}
+    {%for podcast in pod.all%}
+      <h5 style="font-family: 'Raleway';text-align:left;"><a href = "{%url 'outreach:outreach'%}">{{podcast.title}}</a></h5>
+    {%endfor%}
+  
+  </div>
+  <div class = "col-3"></div>
+  <div class="col-3">
     <center>
       <a href="{% url 'mainsite:background' %}"><button class="btn btn-info" style="font-size: 1.2em;">
         Know more about us <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-caret-right-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -106,7 +121,9 @@
       </button></a>
     </center>
   </div>
+  </div>
 </div>
+
 <br><br>
 <div class="container">
   <br><br>

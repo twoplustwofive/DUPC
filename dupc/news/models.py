@@ -33,5 +33,5 @@ class update(models.Model):
         return self.title
 
     def recent(self):
-        return self.update[:5]
+        return update.objects.all()[:5]
     
