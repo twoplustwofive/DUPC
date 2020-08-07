@@ -4,14 +4,31 @@
 
   
 <div id="marine-content-inner"> 
+      <div class="page-heading"><br><br>
+          <h2 style="color: #169EB7; font-weight: 400;align:center;">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Updates About the Project</h2>
+        </div>
   <section id="main-content"> 
+      <br><br>
     <div class="container">
         <br>
         <div class="row justify-content-end" style="font-size: 100%;font-weight:bold; font-family: Raleway;">
-            <div class="col-lg-3 col-md-3 col-sm-3">
-               {% if user.is_authenticated %}
-                  <h4 class="breadcrumbs"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'news:add'%}" role="button">Add News</a></span></h4>
-            {%endif%}<br>
+          <div class = "col-10">
+          
+              {%for update in up.all%}
+              <div class = "container">
+                <h5 style="color: #169EB7; font-weight: bold;font-family: Raleway;">{{update.title}}</h5>
+                {%if update.has_image == True%}
+                  <img src="{{update.image.url}}" class="img-fluid" alt="Responsive image">
+                {%endif%}
+                    <p style = "font-size: 100%;font-family: Raleway;">{{update.month}}&nbsp;{{update.date}},{{update.year}}.<br><br>{{update.body}}&nbsp;{%if update.has_url == True %}<a href = "{{update.url}}" style  = "color:#169EB7; text-decoration: none;"><span style="color: #169EB7; font-weight: bold;"><b> Know More</b></span></a>{%endif%}<br>{%if update.has_file == True%}<a href = "{{update.file.url}}" style  = "color:#169EB7; text-decoration: none;"><span style="color: #169EB7; font-weight: bold;"><b> Download</b></span></a>{%endif%}</p>
+                    <br><br>
+                    </div><br>
+              {%endfor%}          
+          
+          </div>
+
+            <div class="col-2">
+              
               	<p style="color: #000; border-left: 2px solid #169EB7; padding-left: 15px;">
                 
                 <a href="{%url 'news:nss' 2020 'August'%}" style="color: #000;">Aug 2020</a><br><br>
@@ -50,7 +67,12 @@
                 <a href="{%url 'news:nss' 2023 'May'%}" style="color: #000;">May 2023</a><br><br>
                 <a href="{%url 'news:nss' 2023 'June'%}" style="color: #000;">Jun 2023</a><br><br>
                 <a href="{%url 'news:nss' 2023 'July'%}" style="color: #000;">Jul 2023</a><br><br>
-
+                {% if user.is_authenticated %}
+                  <h4 class="breadcrumbs"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'news:add'%}" role="button">Add News</a></span></h4>
+            {%endif%}<br>
+            {% if user.is_authenticated %}
+                  <h4 class="breadcrumbs"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'news:addupdate'%}" role="button">Add Update</a></span></h4>
+            {%endif%}<br>
               	</p>
             	</div>
           </div>
