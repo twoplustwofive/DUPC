@@ -39,14 +39,14 @@
                       <br>
                       </div><br>
 
-
+          {%endfor%}
                       <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6">
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
           <br>
             {% if user.is_authenticated %}
-          <h4 class="breadcrumbs" align = "center"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'stories:add'%}" role="button">Add Publication</a></span></h4>
+          <h4 class="breadcrumbs" align = "center"><span typeof="v:Breadcrumb"><a class="btn btn-dark" href="{%url 'stories:add'%}" role="button">Add Story</a></span></h4>
             {%endif%}
         </div>
       </div>
@@ -54,7 +54,7 @@
         
 </div>
                       
-                    {%endfor%}
+                    
 				
             </div>
           </div>

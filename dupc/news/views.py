@@ -12,7 +12,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 # Create your views here.
 def newss(request):
    
-    up = update.objects
+    up = update.objects.filter().order_by('-id')
     
     return render(request,'news/news.html',{'up':up})
 
